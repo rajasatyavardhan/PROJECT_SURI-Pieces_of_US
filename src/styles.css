@@ -61,27 +61,45 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/*
+ * PROJECT SURI palette — cinematic near-black with warm pink light.
+ * Single theme (always dark); .dark mirrors it so nothing can flip to white.
+ */
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --radius: 1rem;
+  --background: oklch(0.135 0.012 12);
+  --foreground: oklch(0.945 0.012 30);
+  --card: oklch(0.185 0.016 12);
+  --card-foreground: oklch(0.945 0.012 30);
+  --popover: oklch(0.185 0.016 12);
+  --popover-foreground: oklch(0.945 0.012 30);
+  --primary: oklch(0.76 0.13 12);
+  --primary-foreground: oklch(0.16 0.02 12);
+  --secondary: oklch(0.24 0.02 20);
+  --secondary-foreground: oklch(0.945 0.012 30);
+  --muted: oklch(0.24 0.02 20);
+  --muted-foreground: oklch(0.72 0.025 25);
+  --accent: oklch(0.3 0.045 18);
+  --accent-foreground: oklch(0.96 0.01 30);
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(0.98 0.005 30);
+  --border: oklch(0.98 0.02 20 / 12%);
+  --input: oklch(0.98 0.02 20 / 16%);
+  --ring: oklch(0.76 0.13 12 / 60%);
+
+  --glow-soft: 0 0 28px -6px color-mix(in oklab, var(--primary) 45%, transparent);
+  --glow-strong: 0 0 60px -8px color-mix(in oklab, var(--primary) 65%, transparent);
+  --gradient-aurora: radial-gradient(
+      120% 80% at 50% 8%,
+      color-mix(in oklab, var(--primary) 16%, transparent) 0%,
+      transparent 62%
+    ),
+    radial-gradient(90% 60% at 15% 95%, oklch(0.4 0.09 340 / 14%) 0%, transparent 70%);
+  --gradient-veil: radial-gradient(
+    140% 70% at 50% 0%,
+    color-mix(in oklab, var(--primary) 8%, transparent) 0%,
+    transparent 60%
+  );
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
