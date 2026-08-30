@@ -11,7 +11,7 @@ export function SecretStar() {
   const { secret } = suriConfig;
   const [open, setOpen] = useState(false);
   const [editing, setEditing] = useState(false);
-  const [value, setValue] = useState(secret.message);
+  const [value, setValue] = useState<string>(secret.message);
 
   useEffect(() => {
     setValue(loadText(KEY, secret.message));

@@ -7,7 +7,7 @@ import { loadText, tap } from "@/lib/suri-storage";
 function Tile({ id, label, text }: { id: string; label: string; text: string }) {
   const [open, setOpen] = useState(false);
   const [editing, setEditing] = useState(false);
-  const [value, setValue] = useState(text);
+  const [value, setValue] = useState<string>(text);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const longPressed = useRef(false);
 
