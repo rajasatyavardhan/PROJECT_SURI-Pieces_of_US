@@ -61,27 +61,45 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/*
+ * PROJECT SURI palette — cinematic near-black with warm pink light.
+ * Single theme (always dark); .dark mirrors it so nothing can flip to white.
+ */
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --radius: 1rem;
+  --background: oklch(0.135 0.012 12);
+  --foreground: oklch(0.945 0.012 30);
+  --card: oklch(0.185 0.016 12);
+  --card-foreground: oklch(0.945 0.012 30);
+  --popover: oklch(0.185 0.016 12);
+  --popover-foreground: oklch(0.945 0.012 30);
+  --primary: oklch(0.76 0.13 12);
+  --primary-foreground: oklch(0.16 0.02 12);
+  --secondary: oklch(0.24 0.02 20);
+  --secondary-foreground: oklch(0.945 0.012 30);
+  --muted: oklch(0.24 0.02 20);
+  --muted-foreground: oklch(0.72 0.025 25);
+  --accent: oklch(0.3 0.045 18);
+  --accent-foreground: oklch(0.96 0.01 30);
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(0.98 0.005 30);
+  --border: oklch(0.98 0.02 20 / 12%);
+  --input: oklch(0.98 0.02 20 / 16%);
+  --ring: oklch(0.76 0.13 12 / 60%);
+
+  --glow-soft: 0 0 28px -6px color-mix(in oklab, var(--primary) 45%, transparent);
+  --glow-strong: 0 0 60px -8px color-mix(in oklab, var(--primary) 65%, transparent);
+  --gradient-aurora: radial-gradient(
+      120% 80% at 50% 8%,
+      color-mix(in oklab, var(--primary) 16%, transparent) 0%,
+      transparent 62%
+    ),
+    radial-gradient(90% 60% at 15% 95%, oklch(0.4 0.09 340 / 14%) 0%, transparent 70%);
+  --gradient-veil: radial-gradient(
+    140% 70% at 50% 0%,
+    color-mix(in oklab, var(--primary) 8%, transparent) 0%,
+    transparent 60%
+  );
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -97,48 +115,103 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
+/* The site is intentionally single-theme; .dark inherits :root. */
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes suri-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes suri-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes suri-twinkle {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes suri-breathe {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes suri-pulse {
+  0%,
+  100% {
+    opacity: 0.75;
+    box-shadow: 0 0 0 0 transparent;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: var(--glow-soft);
+  }
 }
 
 @layer base {
   * {
     border-color: var(--color-border);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    letter-spacing: 0.005em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
   }
 }
