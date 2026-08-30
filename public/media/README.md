@@ -12,7 +12,7 @@ Notes:
 
 - Any web format works — `.jpg`, `.png`, `.webp` for the photo; `.mp3`, `.m4a`,
   `.wav` for the audio. If you use a different filename or extension, update
-  `src`ac in the config accordingly.
+  `src` in the config accordingly.
 - Portrait photos look best (the frame is 4:5).
 - Until `ready` is `true`, the site shows a designed placeholder — nothing breaks.
 - No files here are tracked by any analytics; the site is `noindex,nofollow`.
