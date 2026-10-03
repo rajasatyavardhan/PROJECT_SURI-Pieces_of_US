@@ -76,12 +76,13 @@ export function MemoryGallery() {
       } else if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
         event.preventDefault();
         const offset = event.key === "ArrowRight" ? 1 : -1;
-        setActiveId(readyMemories[(activeIndex + offset + readyMemories.length) % readyMemories.length].id);
+        const next = readyMemories[(activeIndex + offset + readyMemories.length) % readyMemories.length];
+        if (next) setActiveId(next.id);
       } else if (event.key === "Tab") {
         const focusable = Array.from(dialogRef.current?.querySelectorAll<HTMLButtonElement>("button:not(:disabled)") ?? []);
-        if (!focusable.length) return;
         const first = focusable[0];
         const last = focusable[focusable.length - 1];
+        if (!first || !last) return;
         if (event.shiftKey && document.activeElement === first) {
           event.preventDefault();
           last.focus();
@@ -97,7 +98,8 @@ export function MemoryGallery() {
 
   const step = (offset: number) => {
     if (!readyMemories.length || activeIndex < 0) return;
-    setActiveId(readyMemories[(activeIndex + offset + readyMemories.length) % readyMemories.length].id);
+    const next = readyMemories[(activeIndex + offset + readyMemories.length) % readyMemories.length];
+    if (next) setActiveId(next.id);
   };
 
   return (
@@ -155,11 +157,15 @@ export function MemoryGallery() {
           aria-modal="true"
           aria-label={`${active.title}, piece ${activeIndex + 1} of ${readyMemories.length}`}
           className="fixed inset-0 z-50 flex flex-col bg-background/98 text-foreground"
-          onTouchStart={event => { touchStart.current = { x: event.touches[0].clientX, y: event.touches[0].clientY }; }}
+          onTouchStart={event => {
+            const touch = event.touches[0];
+            if (touch) touchStart.current = { x: touch.clientX, y: touch.clientY };
+          }}
           onTouchEnd={event => {
-            if (!touchStart.current) return;
-            const dx = event.changedTouches[0].clientX - touchStart.current.x;
-            const dy = event.changedTouches[0].clientY - touchStart.current.y;
+            const touch = event.changedTouches[0];
+            if (!touchStart.current || !touch) return;
+            const dx = touch.clientX - touchStart.current.x;
+            const dy = touch.clientY - touchStart.current.y;
             if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.3) step(dx < 0 ? 1 : -1);
             touchStart.current = null;
           }}
