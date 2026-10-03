@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep memory gallery entries in the central configuration and render them in their own section; the photo pipeline can populate data without changing gallery behavior.

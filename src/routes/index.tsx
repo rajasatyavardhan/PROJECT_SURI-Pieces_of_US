@@ -11,6 +11,7 @@ import { SecretStar } from "@/components/suri/sections/SecretStar";
 import { Closing } from "@/components/suri/sections/Closing";
 import { Particles } from "@/components/suri/Particles";
 import { Reveal } from "@/components/suri/Reveal";
+import { MemoryGallery } from "@/components/suri/sections/MemoryGallery";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -71,6 +72,8 @@ function Index() {
                 <JustMe />
               </div>
             </section>
+
+            <MemoryGallery />
 
             {/* The discreet star — easy to miss, lovely to find. */}
             <Reveal className="pb-6">
