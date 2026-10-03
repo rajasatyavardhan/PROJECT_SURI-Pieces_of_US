@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ImageIcon } from "lucide-react";
 import { suriConfig } from "@/config/suri.config";
 import { Reveal } from "../Reveal";
-import { AudioPlaceholder, AudioPlayer } from "../AudioPlayer";
 
 export function JustMe() {
   const { justMe, media } = suriConfig;
@@ -36,18 +35,6 @@ export function JustMe() {
               {media.photo.placeholder}
             </p>
           </div>
-        )}
-      </div>
-
-      <div className="mt-4">
-        {media.voice.ready ? (
-          <AudioPlayer
-            src={media.voice.src}
-            title={media.voice.title}
-            subtitle={media.voice.subtitle}
-          />
-        ) : (
-          <AudioPlaceholder text={media.voice.placeholder} />
         )}
       </div>
 

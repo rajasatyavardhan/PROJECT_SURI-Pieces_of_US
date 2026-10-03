@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
 import { suriConfig, type SuriMemory } from "@/config/suri.config";
@@ -45,7 +45,7 @@ export function MemoryGallery() {
   const [activeId, setActiveId] = useState<string | null>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const touchStart = useRef<{ x: number; y: number } | null>(null);
-  const readyMemories = memories.filter(memory => memory.ready && !failedIds.has(memory.id));
+  const readyMemories = useMemo(() => memories.filter(memory => memory.ready && !failedIds.has(memory.id)), [failedIds]);
   const activeIndex = readyMemories.findIndex(memory => memory.id === activeId);
   const active = activeIndex >= 0 ? readyMemories[activeIndex] : undefined;
   const revealed = memories.filter(memory => memory.ready).length;
@@ -65,7 +65,7 @@ export function MemoryGallery() {
       document.body.style.overflow = previousOverflow;
       previousFocus?.focus();
     };
-  }, [activeId !== null]);
+  }, [activeId]);
 
   useEffect(() => {
     if (!active) return;
@@ -94,7 +94,7 @@ export function MemoryGallery() {
     };
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
-  }, [active, activeIndex, readyMemories.length]);
+  }, [active, activeIndex, readyMemories]);
 
   const step = (offset: number) => {
     if (!readyMemories.length || activeIndex < 0) return;
@@ -103,19 +103,20 @@ export function MemoryGallery() {
   };
 
   return (
-    <section aria-labelledby="memories-heading" className="relative px-6 pb-16 pt-10">
-      <div className="mx-auto max-w-md">
+    <section aria-labelledby="memories-heading" className="birthday-section relative px-5 py-24 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-7xl">
         <Reveal>
           <div className="flex items-end justify-between gap-4">
             <div>
-              <h2 id="memories-heading" className="font-serif text-3xl text-foreground">Pieces of us</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Little moments I keep returning to.</p>
+              <p className="birthday-eyebrow">03 / Our moments</p>
+              <h2 id="memories-heading" className="birthday-title mt-5 text-foreground">{suriConfig.birthday.piecesTitle}</h2>
+              <p className="mt-4 max-w-xl text-base text-muted-foreground">{suriConfig.birthday.piecesBody}</p>
             </div>
           </div>
-          <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-primary/75">{revealed} of {memories.length} revealed</p>
+          <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-primary/75">{revealed} of {memories.length} chosen memories revealed</p>
         </Reveal>
 
-        <div className="mt-7 grid grid-cols-2 items-start gap-x-3 gap-y-5">
+        <div className="mt-10 grid grid-cols-2 items-start gap-x-3 gap-y-6 sm:gap-x-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {memories.map((memory, index) => {
             const available = memory.ready && !failedIds.has(memory.id);
             const portrait = index % 4 === 0 || index % 4 === 3;

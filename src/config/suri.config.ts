@@ -47,27 +47,51 @@ export const suriConfig = {
   meta: {
     /** Browser tab / share title. Kept private: the site is noindex,nofollow. */
     title: "Project SURI — Pieces of Us",
-    description: "A small private place, made for one person.",
+    description: "A birthday world for Suri, made with love by Raja.",
     projectName: "PROJECT SURI",
     tagline: "Pieces of Us",
   },
 
   people: {
     her: "Suri",
-    herFullName: "Sai Susritha",
+    herFullName: "Madireddy Sai Susritha",
     him: "Raja",
+  },
+
+  birthday: {
+    date: "2006-10-07",
+    age: 20,
+    togetherSince: "2024-04-21",
+    eyebrow: "A little world, made just for you",
+    wish: "Many, many happy returns of the day, future doctor gaaru.",
+    dedication: "To the most beautiful, gorgeous, wonderful human being — and my girl.",
+    worldTitle: "Welcome to Suri's world",
+    worldNote: "Created, crafted, and designed with love and time by your most handsome and great BAAVA. Hehe.",
+    chapters: [
+      { number: "01", title: "The little girl who became you", body: "From childhood to the person I am so proud of today.", mediaLabel: "Childhood photo chosen by Raja", imageSrc: "/media/childhood.jpg", ready: false },
+      { number: "02", title: "Every version of Suri", body: "The soft, the playful, the determined — all of you belongs here.", mediaLabel: "Suri portrait chosen by Raja", imageSrc: "/media/suri-now.jpg", ready: false },
+      { number: "03", title: "And then, us", body: "Small moments became our favourite story.", mediaLabel: "Our photo chosen by Raja", imageSrc: "/media/us-together.jpg", ready: false },
+    ],
+    piecesTitle: "Pieces of us",
+    piecesBody: "The moments I keep coming back to. Soon, your favourites will live here.",
+    hisTitle: "From my side of the story",
+    hisBody: "Somewhere in all these memories, there is me — looking up at a sky full of us.",
+    skyTitle: "Look up, Suri",
+    skyBody: "Our photos will rise like fireworks, make their own little hearts, and become one picture of us.",
+    cakeTitle: "One birthday wish, just for you",
+    endingTitle: "Happy 20th birthday, my Bujjodaa Suri.",
   },
 
   /** ---------------------------------------------------------------- OPENING */
   opening: {
-    greeting: "Hey Suri",
+    greeting: "Happy 20th Birthday",
     lines: [
-      "You don't have to be okay right now.",
-      "You don't have to explain anything.",
-      "I built you a small quiet place.",
+      "MADIREDDY SAI SUSRITHA",
+      "Many, many happy returns of the day, future doctor gaaru.",
+      "To the most beautiful, gorgeous, wonderful human being — and my girl.",
     ],
-    cta: "Come here",
-    hint: "take your time",
+    cta: "Enter Suri's world",
+    hint: "scroll slowly · this is yours",
   },
 
   /** -------------------------------------------------------------- RIGHT NOW */
@@ -154,11 +178,16 @@ export const suriConfig = {
   /** ------------------------------------------------ MINI EXPERIENCE: JUST ME */
   justMe: {
     title: "Just me",
-    subtitle: "No filter, no performance. One picture, one voice.",
+    subtitle: "One photograph from me, looking up at the sky we made.",
     note: "Replace these in src/config/suri.config.ts → media",
   },
 
   media: {
+    hero: {
+      src: "/media/suri-hero.jpg",
+      alt: "Suri in her chosen birthday portrait",
+      ready: false,
+    },
     photo: {
       /** Put your file at public/media/suri-photo.jpg */
       src: "/media/suri-photo.jpg",
@@ -216,25 +245,25 @@ export const suriConfig = {
   /** ---------------------------------------------------------------- CLOSING */
   closing: {
     eyebrow: "Project SURI",
-    title: "This is only piece one.",
+    title: "And the best part is still us.",
     promise:
-      "Every empty tile below is something I haven't shown you yet. I'll keep filling them in. Slowly, quietly, for a long time.",
+      "Happy birthday, Suri. Every piece of this was made with love, and every tomorrow is another piece we get to make together.",
     mosaicTiles: 24,
     /** How many tiles are already "filled" (this site). */
     mosaicFilled: 5,
     mosaicCaption: "unrevealed",
-    footer: "Made only for you. Nobody else has this link.",
+    footer: "Made for you, with all my love. — Raja",
   },
 
   contact: {
     primary: {
-      enabled: true,
+      enabled: false,
       label: "Call me",
       // Replace 91XXXXXXXXXX with the full international number (no + / spaces).
       href: "https://wa.me/91XXXXXXXXXX",
     } as ContactAction,
     secondary: {
-      enabled: true,
+      enabled: false,
       label: "Just text me",
       href: "https://wa.me/91XXXXXXXXXX?text=I%20found%20it%20%F0%9F%A4%8D",
     } as ContactAction,

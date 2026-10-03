@@ -1,12 +1,17 @@
 # Media for Project SURI
 
-Drop two files in this folder, then flip the matching `ready: true` flag in
-`src/config/suri.config.ts` (under `media`).
+After Raja approves each image, put the selected files in this folder and flip
+the matching `ready: true` flag in `src/config/suri.config.ts`. Do not copy the
+raw Telegram export or the unreviewed 556-photo library into this public repo.
 
 | What            | File to add here        | Config field    |
 | --------------- | ----------------------- | --------------- |
-| One photo       | `suri-photo.jpg`        | `media.photo`   |
-| One voice note  | `suri-voice.m4a`        | `media.voice`   |
+| Hero portrait   | `suri-hero.jpg`         | `media.hero`    |
+| Childhood photo | `childhood.jpg`         | `birthday.chapters[0]` |
+| Suri now        | `suri-now.jpg`          | `birthday.chapters[1]` |
+| Together photo  | `us-together.jpg`       | `birthday.chapters[2]` |
+| Raja photo      | `suri-photo.jpg`        | `media.photo`   |
+| Final voice     | `suri-voice.m4a`        | `media.voice`   |
 
 Notes:
 
@@ -15,4 +20,5 @@ Notes:
   `src` in the config accordingly.
 - Portrait photos look best (the frame is 4:5).
 - Until `ready` is `true`, the site shows a designed placeholder — nothing breaks.
-- No files here are tracked by any analytics; the site is `noindex,nofollow`.
+- `noindex,nofollow` is not a privacy barrier. An approved file published here
+  can be viewed by anyone who has its URL.
