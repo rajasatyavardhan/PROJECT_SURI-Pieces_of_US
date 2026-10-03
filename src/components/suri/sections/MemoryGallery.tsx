@@ -44,7 +44,6 @@ export function MemoryGallery() {
   const [failedIds, setFailedIds] = useState<Set<string>>(() => new Set());
   const [activeId, setActiveId] = useState<string | null>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
-  const closeRef = useRef<HTMLButtonElement>(null);
   const touchStart = useRef<{ x: number; y: number } | null>(null);
   const readyMemories = memories.filter(memory => memory.ready && !failedIds.has(memory.id));
   const activeIndex = readyMemories.findIndex(memory => memory.id === activeId);
@@ -61,7 +60,7 @@ export function MemoryGallery() {
     const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
+    dialogRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
     return () => {
       document.body.style.overflow = previousOverflow;
       previousFocus?.focus();
@@ -167,7 +166,7 @@ export function MemoryGallery() {
         >
           <div className="flex shrink-0 items-center justify-between px-5 py-4">
             <span className="text-xs tracking-wide text-muted-foreground">{activeIndex + 1} / {readyMemories.length}</span>
-            <SoftButton ref={closeRef} type="button" variant="ghost" aria-label="Close gallery" title="Close" onClick={() => setActiveId(null)} className="h-11 w-11 rounded-full p-0"><X className="h-5 w-5" /></SoftButton>
+            <SoftButton type="button" variant="ghost" aria-label="Close gallery" title="Close" onClick={() => setActiveId(null)} className="h-11 w-11 rounded-full p-0"><X className="h-5 w-5" /></SoftButton>
           </div>
           <div className="flex min-h-0 flex-1 items-center justify-center px-4">
             <img src={active.imageSrc} alt={active.alt} onError={() => markFailed(active.id)} className="max-h-full max-w-full object-contain" />
