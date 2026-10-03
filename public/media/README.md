@@ -1,8 +1,10 @@
 # Media for Project SURI
 
 After Raja approves each image, put the selected files in this folder and flip
-the matching `ready: true` flag in `src/config/suri.config.ts`. Do not copy the
-raw Telegram export or the unreviewed 556-photo library into this public repo.
+the matching `ready: true` flag in `src/config/suri.config.ts`. Photos marked
+"no need" for the main story can go in `mosaicOnlyMemories` after approval;
+they do not appear in the main gallery. Do not copy the raw Telegram export or
+the unreviewed photo library into this public repo.
 
 | What            | File to add here        | Config field    |
 | --------------- | ----------------------- | --------------- |

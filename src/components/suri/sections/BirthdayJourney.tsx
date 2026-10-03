@@ -6,6 +6,7 @@ import { SoftButton } from "../SoftButton";
 
 const heartRows = ["0110110", "1111111", "1111111", "0111110", "0011100", "0001000"];
 const heartCells = heartRows.join("").split("");
+const photosPerHeart = heartCells.filter(cell => cell === "1").length;
 
 export function WorldIntro() {
   const { birthday } = suriConfig;
@@ -65,10 +66,10 @@ export function SuriStory() {
 }
 
 export function PhotoSky() {
-  const { birthday, memories } = suriConfig;
-  const approved = memories.filter(memory => memory.ready);
+  const { birthday, memories, mosaicOnlyMemories } = suriConfig;
+  const approved = [...memories, ...mosaicOnlyMemories].filter(memory => memory.ready);
   const [burst, setBurst] = useState(0);
-  let photoIndex = 0;
+  let photoIndex = burst * photosPerHeart;
 
   return (
     <section className="birthday-section birthday-sky px-5 py-24 sm:px-10 lg:px-16" aria-labelledby="photo-sky-title">
@@ -77,12 +78,12 @@ export function PhotoSky() {
           <p className="birthday-eyebrow">05 / The sky we made</p>
           <h2 id="photo-sky-title" className="birthday-title mt-5">{birthday.skyTitle}</h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">{birthday.skyBody}</p>
-          <p className="mt-5 text-sm leading-relaxed text-primary/80">This is a preview. The final photo fireworks and 556-piece mosaic wait for your approved favourites.</p>
+          <p className="mt-5 text-sm leading-relaxed text-primary/80">Each sparkle reveals another little piece. Photos left out of the main story can still belong in our sky.</p>
           <SoftButton type="button" onClick={() => setBurst(previous => previous + 1)} className="mt-8 min-h-12 px-7 py-3">
             <Sparkles className="mr-2 inline h-4 w-4" aria-hidden="true" /> Send a little love skyward
           </SoftButton>
         </Reveal>
-        <Reveal delay={130} className="birthday-sky-stage" aria-label="Heart-shaped preview of the future photo mosaic">
+        <Reveal delay={130} className="birthday-sky-stage" aria-label="Heart-shaped preview of the photo mosaic">
           <div className="birthday-sky-glow" aria-hidden="true" />
           <div className="birthday-heart-grid">
             {heartCells.map((cell, index) => {

@@ -228,6 +228,12 @@ export const suriConfig = {
     };
   }),
 
+  /** Approved images excluded from the main story but allowed in the photo sky.
+   * Populate this with web-ready assets only; never commit review IDs, chat text,
+   * private Drive paths, or the raw Telegram export to this public repository.
+   */
+  mosaicOnlyMemories: [] as SuriMemory[],
+
   /** ------------------------------------------------------------ SECRET STAR */
   secret: {
     /** The discreet star's whisper when found. */

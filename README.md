@@ -2,7 +2,7 @@
 
 An interactive 20th-birthday story for MADIREDDY SAI SUSRITHA, made by Raja. The current UI includes a responsive opening, story chapters, the existing memory gallery, Raja's side, a photo-heart preview, a tappable cake, and a soft ending with a slot for Raja's voice message. It is designed for phones, tablets, and desktops.
 
-The hero, childhood, together, Raja, gallery, final mosaic, and voice assets are **placeholders until Raja chooses and approves them**. Configure the smaller media slots in `src/config/suri.config.ts`. Keep gallery entries in that central file and render them through `MemoryGallery`.
+The approved hero portrait is present. Childhood, together, Raja, gallery, final mosaic, and voice assets remain **placeholders until Raja chooses and approves them**. Configure media in `src/config/suri.config.ts`. Main-story gallery entries stay in `memories` and render through `MemoryGallery`; approved mosaic-only images go in `mosaicOnlyMemories` and appear in the interactive photo sky, not the main gallery.
 
 Do not commit raw Telegram exports, unreviewed photos, private chat text, or analytics source data. This repository is public. `noindex,nofollow` discourages search indexing; it is **not** access control. Publish only approved photos and aggregate analytics.
 
