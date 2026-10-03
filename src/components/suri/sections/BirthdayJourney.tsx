@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { type PointerEvent, useRef, useState } from "react";
 import { Heart, Sparkles } from "lucide-react";
 import { suriConfig } from "@/config/suri.config";
 import { Reveal } from "../Reveal";
@@ -105,13 +105,24 @@ export function PhotoSky() {
 
 export function BirthdayCake() {
   const [stage, setStage] = useState<"lit" | "wished" | "cut">("lit");
+  const [isCutting, setIsCutting] = useState(false);
+  const [cutX, setCutX] = useState<number | null>(null);
   const cutStartX = useRef<number | null>(null);
 
-  const finishCut = (endX: number) => {
+  const updateCutLine = (event: PointerEvent<HTMLDivElement>) => {
+    if (stage !== "wished" || cutStartX.current === null) return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    setCutX(Math.max(14, Math.min(86, ((event.clientX - bounds.left) / bounds.width) * 100)));
+  };
+
+  const finishCut = (event: PointerEvent<HTMLDivElement>) => {
+    const endX = event.clientX;
     if (stage === "wished" && cutStartX.current !== null && Math.abs(endX - cutStartX.current) > 55) {
       setStage("cut");
     }
     cutStartX.current = null;
+    setCutX(null);
+    setIsCutting(false);
   };
 
   return (
@@ -119,20 +130,28 @@ export function BirthdayCake() {
       <Reveal className="mx-auto max-w-3xl">
         <p className="birthday-eyebrow">06 / A playful little pause</p>
         <h2 id="cake-title" className="birthday-title mt-5">{suriConfig.birthday.cakeTitle}</h2>
-        <p className="mt-5 text-base text-muted-foreground">Make a wish, blow out the candle, then swipe across the chocolate cake to cut the first slice.</p>
+        <p className="mt-5 text-base text-muted-foreground">Make a wish, blow out the candle, then touch and drag across the chocolate cake with your finger.</p>
         <div
           className={`birthday-cake-scene ${stage === "wished" ? "birthday-cake-ready" : ""}`}
           role="img"
           aria-label={stage === "lit" ? "A chocolate birthday cake with a lit candle" : stage === "cut" ? "A sliced chocolate birthday cake" : "A chocolate birthday cake ready to cut"}
-          onPointerDown={event => { if (stage === "wished") cutStartX.current = event.clientX; }}
-          onPointerUp={event => finishCut(event.clientX)}
-          onPointerCancel={() => { cutStartX.current = null; }}
+          onPointerDown={event => {
+            if (stage !== "wished") return;
+            event.currentTarget.setPointerCapture(event.pointerId);
+            cutStartX.current = event.clientX;
+            setIsCutting(true);
+            updateCutLine(event);
+          }}
+          onPointerMove={updateCutLine}
+          onPointerUp={finishCut}
+          onPointerCancel={() => { cutStartX.current = null; setCutX(null); setIsCutting(false); }}
         >
           <span className={`birthday-flame ${stage === "lit" ? "" : "birthday-flame-out"}`} />
           <span className="birthday-candle" />
           <span className={`birthday-cake-top ${stage === "cut" ? "birthday-cake-cut" : ""}`} />
           <span className="birthday-cake-base" />
           <span className={`birthday-cake-slice ${stage === "cut" ? "birthday-cake-slice-served" : ""}`} />
+          {isCutting && cutX !== null && <span className="birthday-cut-line" style={{ left: `${cutX}%` }} aria-hidden="true" />}
           <span className="birthday-cake-plate" />
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -140,7 +159,7 @@ export function BirthdayCake() {
           {stage === "wished" && <SoftButton type="button" onClick={() => setStage("cut")}>Cut the cake 🎂</SoftButton>}
           {stage === "cut" && <SoftButton type="button" onClick={() => setStage("lit")}>Make another wish</SoftButton>}
         </div>
-        <p role="status" className="mt-6 min-h-6 font-serif text-2xl text-primary">{stage === "wished" ? "Wish made. I hope every bit comes true." : stage === "cut" ? "The first slice is yours, birthday girl." : ""}</p>
+        <p role="status" className="mt-6 min-h-6 font-serif text-2xl text-primary">{stage === "wished" ? (isCutting ? "Keep dragging across the cake…" : "Wish made. Touch the cake and drag to cut it.") : stage === "cut" ? "The first slice is yours, birthday girl." : ""}</p>
       </Reveal>
     </section>
   );
