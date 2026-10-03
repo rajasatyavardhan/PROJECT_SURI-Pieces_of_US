@@ -30,6 +30,19 @@ export type ContactAction = {
   href: string;
 };
 
+/** One future photo-pipeline entry. Empty labels and captions stay hidden until supplied. */
+export type SuriMemory = {
+  id: string;
+  imageSrc: string;
+  alt: string;
+  title: string;
+  dateLabel: string;
+  locationLabel: string;
+  shortCaption: string;
+  tags: readonly string[];
+  ready: boolean;
+};
+
 export const suriConfig = {
   meta: {
     /** Browser tab / share title. Kept private: the site is noindex,nofollow. */
@@ -166,6 +179,25 @@ export const suriConfig = {
       placeholder: "Voice note goes here — add public/media/suri-voice.m4a",
     },
   },
+
+  /** Replace each /media/memories/memory-XX.jpg with your own photo in public/media/memories/.
+   * Fill in its alt, title, dateLabel, locationLabel, shortCaption and tags, then flip ready: true.
+   * Leave ready: false until the file exists; empty optional labels won't be displayed.
+   */
+  memories: Array.from({ length: 10 }, (_, index): SuriMemory => {
+    const piece = String(index + 1).padStart(2, "0");
+    return {
+      id: `memory-${piece}`,
+      imageSrc: `/media/memories/memory-${piece}.jpg`,
+      alt: `A moment from Suri and Raja — piece ${piece}`,
+      title: `Piece ${piece}`,
+      dateLabel: "",
+      locationLabel: "",
+      shortCaption: "",
+      tags: [],
+      ready: false,
+    };
+  }),
 
   /** ------------------------------------------------------------ SECRET STAR */
   secret: {
