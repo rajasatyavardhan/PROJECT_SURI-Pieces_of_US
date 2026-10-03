@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Heart, Sparkles } from "lucide-react";
 import { suriConfig } from "@/config/suri.config";
 import { Reveal } from "../Reveal";
@@ -105,17 +105,34 @@ export function PhotoSky() {
 
 export function BirthdayCake() {
   const [stage, setStage] = useState<"lit" | "wished" | "cut">("lit");
+  const cutStartX = useRef<number | null>(null);
+
+  const finishCut = (endX: number) => {
+    if (stage === "wished" && cutStartX.current !== null && Math.abs(endX - cutStartX.current) > 55) {
+      setStage("cut");
+    }
+    cutStartX.current = null;
+  };
+
   return (
     <section className="birthday-section px-5 py-24 text-center sm:px-10" aria-labelledby="cake-title">
       <Reveal className="mx-auto max-w-3xl">
         <p className="birthday-eyebrow">06 / A playful little pause</p>
         <h2 id="cake-title" className="birthday-title mt-5">{suriConfig.birthday.cakeTitle}</h2>
-        <p className="mt-5 text-base text-muted-foreground">Make a wish. Tap to blow out the candle, then cut the cake.</p>
-        <div className="birthday-cake-scene" role="img" aria-label={stage === "lit" ? "A birthday cake with a lit candle" : "A birthday cake with its candle blown out"}>
+        <p className="mt-5 text-base text-muted-foreground">Make a wish, blow out the candle, then swipe across the chocolate cake to cut the first slice.</p>
+        <div
+          className={`birthday-cake-scene ${stage === "wished" ? "birthday-cake-ready" : ""}`}
+          role="img"
+          aria-label={stage === "lit" ? "A chocolate birthday cake with a lit candle" : stage === "cut" ? "A sliced chocolate birthday cake" : "A chocolate birthday cake ready to cut"}
+          onPointerDown={event => { if (stage === "wished") cutStartX.current = event.clientX; }}
+          onPointerUp={event => finishCut(event.clientX)}
+          onPointerCancel={() => { cutStartX.current = null; }}
+        >
           <span className={`birthday-flame ${stage === "lit" ? "" : "birthday-flame-out"}`} />
           <span className="birthday-candle" />
           <span className={`birthday-cake-top ${stage === "cut" ? "birthday-cake-cut" : ""}`} />
           <span className="birthday-cake-base" />
+          <span className={`birthday-cake-slice ${stage === "cut" ? "birthday-cake-slice-served" : ""}`} />
           <span className="birthday-cake-plate" />
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-3">

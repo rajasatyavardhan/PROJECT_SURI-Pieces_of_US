@@ -79,7 +79,7 @@ export const suriConfig = {
     skyTitle: "Look up, Suri",
     skyBody: "Our photos will rise like fireworks, make their own little hearts, and become one picture of us.",
     cakeTitle: "One birthday wish, just for you",
-    endingTitle: "Happy 20th birthday, my Bujjodaa Suri.",
+    endingTitle: "Happy 20th birthday, my bujji bangaru maradhala Susritha Bujjodaa.",
   },
 
   /** ---------------------------------------------------------------- OPENING */
