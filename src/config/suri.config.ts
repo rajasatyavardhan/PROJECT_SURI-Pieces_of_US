@@ -185,8 +185,8 @@ export const suriConfig = {
   media: {
     hero: {
       src: "/media/suri-hero.jpg",
-      alt: "Suri in her chosen birthday portrait",
-      ready: false,
+      alt: "Susritha in her chosen birthday portrait",
+      ready: true,
     },
     photo: {
       /** Put your file at public/media/suri-photo.jpg */
