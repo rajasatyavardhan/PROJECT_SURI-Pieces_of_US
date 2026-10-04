@@ -103,7 +103,7 @@ export function SuriStory() {
         <Reveal>
           <p className="birthday-eyebrow">02 / Before and after we met</p>
           <h2 id="suri-story-title" className="birthday-title mt-5">Every version of <em className="text-primary">you.</em></h2>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">A little journey from childhood to now. Your chosen photographs will turn these frames into our filmstrip.</p>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">A little journey from childhood to now, with your favourite moments finding their places along the way.</p>
         </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-3 lg:gap-8">
           {birthday.chapters.map((chapter, index) => (

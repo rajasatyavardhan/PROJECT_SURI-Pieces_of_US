@@ -71,15 +71,15 @@ export const suriConfig = {
     worldNote: "Created, crafted, and designed with love and time by your most handsome and great BAAVA. Hehe.",
     chapters: [
       { number: "01", title: "The little girl who became you", body: "From childhood to the person I am so proud of today.", mediaLabel: "Childhood photo chosen by Raja", imageSrc: "/media/childhood.jpg", ready: false },
-      { number: "02", title: "Every version of Suri", body: "The soft, the playful, the determined — all of you belongs here.", mediaLabel: "Suri portrait chosen by Raja", imageSrc: "/media/suri-now.jpg", ready: false },
-      { number: "03", title: "And then, us", body: "Small moments became our favourite story.", mediaLabel: "Our photo chosen by Raja", imageSrc: "/media/us-together.jpg", ready: false },
+      { number: "02", title: "Every version of Suri", body: "The soft, the playful, the determined — all of you belongs here.", mediaLabel: "Susritha in a red celebration outfit", imageSrc: "/media/suri-now.jpg", ready: true },
+      { number: "03", title: "And then, us", body: "Small moments became our favourite story.", mediaLabel: "Susritha and Raja together", imageSrc: "/media/us-together.jpg", ready: true },
     ],
     piecesTitle: "Pieces of us",
-    piecesBody: "The moments I keep coming back to. Soon, your favourites will live here.",
+    piecesBody: "A few of the moments I keep coming back to.",
     hisTitle: "From my side of the story",
     hisBody: "Somewhere in all these memories, there is me — looking up at a sky full of us.",
     skyTitle: "Look up, Suri",
-    skyBody: "Our photos will rise like fireworks, make their own little hearts, and become one picture of us.",
+    skyBody: "Our little photos light up the sky and find their way into a heart.",
     cakeTitle: "One birthday wish, just for you",
     endingTitle: "Happy 20th birthday, my bujji bangaru maradhala Susritha Bujjodaa.",
   },
@@ -208,13 +208,13 @@ export const suriConfig = {
       ready: true,
     },
     photo: {
-      /** Put your file at public/media/suri-photo.jpg */
-      src: "/media/suri-photo.jpg",
-      alt: "A photo from Raja",
+      /** The approved Raja portrait is stored at public/media/suri-photo.webp. */
+      src: "/media/suri-photo.webp",
+      alt: "Raja smiling beside the falls",
       caption: "Me, in a moment I wanted you to have.",
       /** Set to true once you've actually added the file. */
-      ready: false,
-      placeholder: "Photo goes here — add public/media/suri-photo.jpg",
+      ready: true,
+      placeholder: "Photo goes here — add public/media/suri-photo.webp",
     },
     voice: {
       /** Put your file at public/media/suri-voice.m4a */
@@ -228,30 +228,29 @@ export const suriConfig = {
     },
   },
 
-  /** Replace each /media/memories/memory-XX.jpg with your own photo in public/media/memories/.
-   * Fill in its alt, title, dateLabel, locationLabel, shortCaption and tags, then flip ready: true.
-   * Leave ready: false until the file exists; empty optional labels won't be displayed.
+  /** Only user-reviewed and visually checked selections are published here.
+   * The private role model suggests candidates but never enables an image by itself.
    */
-  memories: Array.from({ length: 10 }, (_, index): SuriMemory => {
-    const piece = String(index + 1).padStart(2, "0");
-    return {
-      id: `memory-${piece}`,
-      imageSrc: `/media/memories/memory-${piece}.jpg`,
-      alt: `A moment from Suri and Raja — piece ${piece}`,
-      title: `Piece ${piece}`,
-      dateLabel: "",
-      locationLabel: "",
-      shortCaption: "",
-      tags: [],
-      ready: false,
-    };
-  }),
+  memories: [
+    { id: "memory-01", imageSrc: "/media/memories/memory-01.webp", alt: "Susritha in lilac beside a palm tree", title: "A little lilac moment", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Suri"], ready: true },
+    { id: "memory-02", imageSrc: "/media/memories/memory-02.webp", alt: "Susritha reflected in a rain-speckled car mirror", title: "The way you see the world", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Suri"], ready: true },
+    { id: "memory-03", imageSrc: "/media/memories/memory-03.webp", alt: "Susritha smiling in a red floral outfit", title: "That smile", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Suri"], ready: true },
+    { id: "memory-04", imageSrc: "/media/memories/memory-04.jpg", alt: "Susritha in a red celebration outfit", title: "Every version of you", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Suri"], ready: true },
+    { id: "memory-05", imageSrc: "/media/memories/memory-05.webp", alt: "Susritha dressed for a celebration", title: "A celebration in colour", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Suri"], ready: true },
+    { id: "memory-06", imageSrc: "/media/memories/memory-06.jpg", alt: "Susritha and Raja standing together", title: "One of my favourite us pictures", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Us"], ready: true },
+    { id: "memory-07", imageSrc: "/media/memories/memory-07.jpg", alt: "A phone-screen photo of Susritha and Raja together with a birthday cake", title: "A cake, and us", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Us"], ready: true },
+    { id: "memory-08", imageSrc: "/media/memories/memory-08.webp", alt: "Raja smiling beside the falls", title: "From my side of the story", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Raja"], ready: true },
+    { id: "memory-09", imageSrc: "/media/memories/memory-09.webp", alt: "Raja looking out toward a waterfall", title: "Looking up at our sky", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Raja"], ready: true },
+    { id: "memory-10", imageSrc: "/media/memories/memory-10.webp", alt: "Susritha with family at a celebration", title: "The people around you", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Family"], ready: true },
+  ] as SuriMemory[],
 
   /** Approved images excluded from the main story but allowed in the photo sky.
    * Populate this with web-ready assets only; never commit review IDs, chat text,
    * private Drive paths, or the raw Telegram export to this public repository.
    */
-  mosaicOnlyMemories: [] as SuriMemory[],
+  mosaicOnlyMemories: [
+    { id: "mosaic-red-pose", imageSrc: "/media/memories/mosaic-red-pose.webp", alt: "Another pose of Susritha in red", title: "Another little piece", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Mosaic"], ready: true },
+  ] as SuriMemory[],
 
   /** ------------------------------------------------------------ SECRET STAR */
   secret: {
