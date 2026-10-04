@@ -147,17 +147,24 @@ export function PhotoSky() {
         </Reveal>
         <Reveal delay={130} className="birthday-sky-stage" aria-label="Heart-shaped preview of the photo mosaic">
           <div className="birthday-sky-glow" aria-hidden="true" />
-          <div className="birthday-heart-grid">
+          <div key={burst} className={`birthday-heart-grid ${burst > 0 ? "birthday-heart-grid-lit" : ""}`}>
             {heartCells.map((cell, index) => {
               if (cell === "0") return <span key={index} aria-hidden="true" />;
               const memory = approved.length ? approved[photoIndex++ % approved.length] : undefined;
-              return <span key={index} className="birthday-heart-tile" aria-hidden="true">
+              return <span key={index} className="birthday-heart-tile" style={{ animationDelay: `${index * 26}ms` }} aria-hidden="true">
                 {memory ? <img src={memory.imageSrc} alt="" loading="lazy" /> : <Heart className="h-4 w-4 text-primary/60" />}
               </span>;
             })}
           </div>
           {burst > 0 && <div key={burst} className="birthday-burst" aria-hidden="true">
             {Array.from({ length: 18 }, (_, index) => <span key={index} style={{ transform: `rotate(${index * 20}deg)` }} />)}
+            {approved.length > 0 && Array.from({ length: 8 }, (_, index) => {
+              const memory = approved[(burst * 7 + index) % approved.length];
+              if (!memory) return null;
+              return <span key={`photo-${index}`} className="birthday-photo-ray" style={{ transform: `rotate(${index * 45}deg)` }}>
+                <img src={memory.imageSrc} alt="" />
+              </span>;
+            })}
           </div>}
           <p className="relative mt-8 text-center font-serif text-2xl text-foreground/80">All our little pieces, one heart.</p>
         </Reveal>
