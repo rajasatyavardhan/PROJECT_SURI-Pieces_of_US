@@ -1,4 +1,4 @@
-import { type PointerEvent, useRef, useState } from "react";
+import { type PointerEvent, useEffect, useRef, useState } from "react";
 import { Heart, Sparkles } from "lucide-react";
 import { suriConfig } from "@/config/suri.config";
 import { Reveal } from "../Reveal";
@@ -7,6 +7,71 @@ import { SoftButton } from "../SoftButton";
 const heartRows = ["0110110", "1111111", "1111111", "0111110", "0011100", "0001000"];
 const heartCells = heartRows.join("").split("");
 const photosPerHeart = heartCells.filter(cell => cell === "1").length;
+
+const torontoFormatter = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "America/Toronto",
+  year: "numeric", month: "2-digit", day: "2-digit",
+  hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23",
+});
+
+function torontoClockParts(instant: Date) {
+  const parts = torontoFormatter.formatToParts(instant);
+  const value = (type: string) => {
+    const part = parts.find(item => item.type === type);
+    if (!part) throw new Error(`Missing ${type} in Toronto clock`);
+    return Number(part.value);
+  };
+  return { year: value("year"), month: value("month"), day: value("day"),
+    hour: value("hour"), minute: value("minute"), second: value("second") };
+}
+
+function calendarElapsed(instant: Date) {
+  const start = suriConfig.birthday.togetherSince;
+  const begun = {
+    year: Number(start.slice(0, 4)), month: Number(start.slice(5, 7)), day: Number(start.slice(8, 10)),
+    hour: Number(start.slice(11, 13)), minute: Number(start.slice(14, 16)), second: Number(start.slice(17, 19)),
+  };
+  const current = torontoClockParts(instant);
+  let { year, month, day, hour, minute, second } = current;
+  if (second < begun.second) { second += 60; minute--; }
+  if (minute < begun.minute) { minute += 60; hour--; }
+  if (hour < begun.hour) { hour += 24; day--; }
+  if (day < begun.day) {
+    month--;
+    const previousMonth = month === 0 ? 12 : month;
+    const previousYear = month === 0 ? year - 1 : year;
+    day += new Date(Date.UTC(previousYear, previousMonth, 0)).getUTCDate();
+  }
+  if (month < begun.month) { month += 12; year--; }
+  return { years: year - begun.year, months: month - begun.month, days: day - begun.day,
+    hours: hour - begun.hour, minutes: minute - begun.minute, seconds: second - begun.second };
+}
+
+function TogetherCounter() {
+  const [now, setNow] = useState<Date | null>(null);
+  useEffect(() => {
+    setNow(new Date());
+    const timer = window.setInterval(() => setNow(new Date()), 1000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const start = suriConfig.birthday.togetherSince;
+  const duration = now ? calendarElapsed(now) : null;
+  const units = [
+    ["Years", duration?.years], ["Months", duration?.months], ["Days", duration?.days],
+    ["Hours", duration?.hours], ["Minutes", duration?.minutes], ["Seconds", duration?.seconds],
+  ] as const;
+
+  return <div className="birthday-together" aria-label="Time together since 21 April 2024 at 6 a.m. Toronto time">
+    <p className="birthday-eyebrow">Together for</p>
+    <div className="birthday-together-grid" aria-live="off">
+      {units.map(([label, value]) => <div key={label} className="birthday-together-unit">
+        <span>{value === undefined ? "—" : value}</span><small>{label}</small>
+      </div>)}
+    </div>
+    <time dateTime={start} className="birthday-together-since">Since 21 April 2024 · 6:00 a.m. Toronto time</time>
+  </div>;
+}
 
 export function WorldIntro() {
   const { birthday } = suriConfig;
@@ -17,10 +82,7 @@ export function WorldIntro() {
           <p className="birthday-eyebrow">01 / A little world</p>
           <h2 className="birthday-title mt-5">{birthday.worldTitle}</h2>
           <p className="mt-7 max-w-xl text-balance text-lg leading-relaxed text-muted-foreground">{birthday.worldNote}</p>
-          <div className="mt-10 inline-flex flex-wrap items-center gap-3 rounded-full border border-primary/25 bg-primary/5 px-5 py-3 text-sm text-foreground/85">
-            <Heart className="h-4 w-4 text-primary" aria-hidden="true" />
-            <span>Together since 21 April 2024</span>
-          </div>
+          <TogetherCounter />
         </Reveal>
         <Reveal delay={150} className="birthday-world-card">
           <div className="birthday-world-ring" aria-hidden="true" />
@@ -106,23 +168,24 @@ export function PhotoSky() {
 
 export function BirthdayCake() {
   const [stage, setStage] = useState<"lit" | "wished" | "cut">("lit");
+  const [cutProgress, setCutProgress] = useState(0);
   const [isCutting, setIsCutting] = useState(false);
-  const [cutX, setCutX] = useState<number | null>(null);
-  const cutStartX = useRef<number | null>(null);
+  const cutStartY = useRef<number | null>(null);
 
-  const updateCutLine = (event: PointerEvent<HTMLDivElement>) => {
-    if (stage !== "wished" || cutStartX.current === null) return;
-    const bounds = event.currentTarget.getBoundingClientRect();
-    setCutX(Math.max(14, Math.min(86, ((event.clientX - bounds.left) / bounds.width) * 100)));
+  const advanceCut = (event: PointerEvent<HTMLDivElement>) => {
+    if (stage !== "wished" || cutStartY.current === null) return;
+    const distance = event.clientY - cutStartY.current;
+    setCutProgress(Math.max(0, Math.min(1, distance / 105)));
   };
 
   const finishCut = (event: PointerEvent<HTMLDivElement>) => {
-    const endX = event.clientX;
-    if (stage === "wished" && cutStartX.current !== null && Math.abs(endX - cutStartX.current) > 55) {
+    if (stage === "wished" && cutStartY.current !== null && event.clientY - cutStartY.current >= 85) {
       setStage("cut");
+      setCutProgress(1);
+    } else {
+      setCutProgress(0);
     }
-    cutStartX.current = null;
-    setCutX(null);
+    cutStartY.current = null;
     setIsCutting(false);
   };
 
@@ -131,36 +194,42 @@ export function BirthdayCake() {
       <Reveal className="mx-auto max-w-3xl">
         <p className="birthday-eyebrow">06 / A playful little pause</p>
         <h2 id="cake-title" className="birthday-title mt-5">{suriConfig.birthday.cakeTitle}</h2>
-        <p className="mt-5 text-base text-muted-foreground">Make a wish, blow out the candle, then touch and drag across the chocolate cake with your finger.</p>
+        <p className="mt-5 text-base text-muted-foreground">Make a wish, tap the candle, then drag your finger down through the chocolate cake to cut a slice.</p>
         <div
           className={`birthday-cake-scene ${stage === "wished" ? "birthday-cake-ready" : ""}`}
-          role="img"
-          aria-label={stage === "lit" ? "A chocolate birthday cake with a lit candle" : stage === "cut" ? "A sliced chocolate birthday cake" : "A chocolate birthday cake ready to cut"}
+          role={stage === "wished" ? "button" : "img"}
+          tabIndex={stage === "wished" ? 0 : undefined}
+          aria-label={stage === "lit" ? "A chocolate birthday cake with a lit candle" : stage === "cut" ? "A sliced chocolate birthday cake" : "Drag down to cut the chocolate cake, or press Enter"}
           onPointerDown={event => {
             if (stage !== "wished") return;
+            const bounds = event.currentTarget.getBoundingClientRect();
+            const relativeY = event.clientY - bounds.top;
+            if (relativeY < 90 || relativeY > 180) return;
             event.currentTarget.setPointerCapture(event.pointerId);
-            cutStartX.current = event.clientX;
+            cutStartY.current = event.clientY;
+            setCutProgress(0);
             setIsCutting(true);
-            updateCutLine(event);
           }}
-          onPointerMove={updateCutLine}
+          onPointerMove={advanceCut}
           onPointerUp={finishCut}
-          onPointerCancel={() => { cutStartX.current = null; setCutX(null); setIsCutting(false); }}
+          onPointerCancel={() => { cutStartY.current = null; setCutProgress(0); setIsCutting(false); }}
+          onKeyDown={event => { if (stage === "wished" && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); setStage("cut"); setCutProgress(1); } }}
         >
-          <span className={`birthday-flame ${stage === "lit" ? "" : "birthday-flame-out"}`} />
+          <span className={`birthday-flame ${stage === "lit" ? "" : "birthday-flame-out"}`} onClick={() => { if (stage === "lit") setStage("wished"); }} />
           <span className="birthday-candle" />
           <span className={`birthday-cake-top ${stage === "cut" ? "birthday-cake-cut" : ""}`} />
           <span className="birthday-cake-base" />
           <span className={`birthday-cake-slice ${stage === "cut" ? "birthday-cake-slice-served" : ""}`} />
-          {isCutting && cutX !== null && <span className="birthday-cut-line" style={{ left: `${cutX}%` }} aria-hidden="true" />}
+          {stage === "wished" && <span className="birthday-cake-guide" aria-hidden="true">↓ drag here to cut</span>}
+          {isCutting && <span className="birthday-cut-line" style={{ height: `${cutProgress * 125}px` }} aria-hidden="true" />}
+          {isCutting && <span className="birthday-knife" style={{ top: `${95 + cutProgress * 125}px` }} aria-hidden="true">✦</span>}
           <span className="birthday-cake-plate" />
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           {stage === "lit" && <SoftButton type="button" onClick={() => setStage("wished")}>Blow out the candle ✨</SoftButton>}
-          {stage === "wished" && <SoftButton type="button" onClick={() => setStage("cut")}>Cut the cake 🎂</SoftButton>}
-          {stage === "cut" && <SoftButton type="button" onClick={() => setStage("lit")}>Make another wish</SoftButton>}
+          {stage === "cut" && <SoftButton type="button" onClick={() => { setStage("lit"); setCutProgress(0); }}>Make another wish</SoftButton>}
         </div>
-        <p role="status" className="mt-6 min-h-6 font-serif text-2xl text-primary">{stage === "wished" ? (isCutting ? "Keep dragging across the cake…" : "Wish made. Touch the cake and drag to cut it.") : stage === "cut" ? "The first slice is yours, birthday girl." : ""}</p>
+        <p role="status" className="mt-6 min-h-6 font-serif text-2xl text-primary">{stage === "wished" ? (isCutting ? "Keep pulling your finger down…" : "Wish made. Drag down through the cake to cut it.") : stage === "cut" ? "The first slice is yours, birthday girl." : ""}</p>
       </Reveal>
     </section>
   );

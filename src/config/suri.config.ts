@@ -61,7 +61,9 @@ export const suriConfig = {
   birthday: {
     date: "2006-10-07",
     age: 20,
-    togetherSince: "2024-04-21",
+    /** 6:00 a.m. Toronto time, confirmed by Raja. April 21 was EDT (UTC−04:00). */
+    togetherSince: "2024-04-21T06:00:00-04:00",
+    togetherTimeZone: "America/Toronto",
     eyebrow: "A little world, made just for you",
     wish: "Many, many happy returns of the day, future doctor gaaru.",
     dedication: "To the most beautiful, gorgeous, wonderful human being — and my girl.",

@@ -382,7 +382,13 @@
   to { transform: translateX(190px) scale(0); opacity: 0; }
 }
 .birthday-cake-scene { position: relative; height: 270px; margin: 2rem auto 0; width: min(100%, 360px); }
-.birthday-cake-ready { cursor: grab; touch-action: none; }
+.birthday-together { margin-top: 2.5rem; max-width: 440px; padding: 1.25rem; border: 1px solid oklch(0.78 0.12 13 / 25%); border-radius: 1.25rem; background: oklch(0.25 0.04 15 / 24%); }
+.birthday-together-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.birthday-together-unit { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70px; border-radius: 0.8rem; background: oklch(0.36 0.07 16 / 22%); }
+.birthday-together-unit > span { font-family: Georgia, serif; font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1; color: oklch(0.89 0.08 15); font-variant-numeric: tabular-nums; }
+.birthday-together-unit > small { margin-top: 0.4rem; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.14em; color: oklch(0.77 0.025 15); }
+.birthday-together-since { display: block; margin-top: 1rem; font-size: 0.7rem; color: oklch(0.78 0.025 15); }
+.birthday-cake-ready { cursor: grab; touch-action: none; outline-offset: 6px; }
 .birthday-cake-ready:active { cursor: grabbing; }
 .birthday-cake-scene > span { position: absolute; left: 50%; transform: translateX(-50%); display: block; }
 .birthday-flame {
@@ -394,15 +400,19 @@
   background: oklch(0.85 0.16 75);
   box-shadow: 0 0 24px oklch(0.8 0.18 65);
   animation: suri-twinkle 2s ease-in-out infinite;
+  cursor: pointer;
 }
 .birthday-flame-out { opacity: 0; animation: none; }
 .birthday-candle { top: 47px; width: 16px; height: 64px; border-radius: 5px; background: repeating-linear-gradient(45deg, oklch(0.93 0.035 15) 0 8px, oklch(0.75 0.13 10) 8px 13px); }
 .birthday-cake-top { top: 100px; z-index: 2; width: 66%; height: 45px; border-radius: 22px 22px 10px 10px; background: linear-gradient(180deg, oklch(0.46 0.085 36), oklch(0.28 0.06 30)); box-shadow: inset 0 8px 0 oklch(0.61 0.10 45 / 55%); }
+.birthday-cake-top::before { content: ""; position: absolute; inset: 9px 14px 12px; border-radius: 50%; background: radial-gradient(circle at 20% 30%, oklch(0.72 0.09 45) 0 3px, transparent 4px), radial-gradient(circle at 65% 40%, oklch(0.79 0.1 25) 0 3px, transparent 4px), radial-gradient(circle at 85% 30%, oklch(0.68 0.08 40) 0 2px, transparent 3px); }
 .birthday-cake-cut { transform: translateX(-42%) rotate(8deg) !important; }
 .birthday-cake-base { top: 125px; width: 70%; height: 112px; border-radius: 16px 16px 22px 22px; background: repeating-linear-gradient(180deg, oklch(0.38 0.07 35) 0 24px, oklch(0.22 0.045 32) 24px 32px); box-shadow: inset 0 -16px 0 oklch(0.14 0.03 28 / 35%), 0 12px 25px oklch(0.15 0.025 30 / 30%); }
 .birthday-cake-scene > .birthday-cake-slice { top: 143px; left: 61%; z-index: 3; width: 23%; height: 90px; clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 100%); background: repeating-linear-gradient(180deg, oklch(0.43 0.075 39) 0 20px, oklch(0.20 0.04 29) 20px 27px); opacity: 0; }
 .birthday-cake-scene > .birthday-cake-slice-served { opacity: 1; transform: translateX(5%) translateY(16px) rotate(10deg); }
-.birthday-cut-line { top: 92px; z-index: 4; width: 4px; height: 104px; border-radius: 999px; background: oklch(0.96 0.9 88); box-shadow: 0 0 12px oklch(0.95 0.25 78 / 75%); pointer-events: none; }
+.birthday-cake-guide { top: 148px; z-index: 5; width: 66%; padding: 0.35rem; border-radius: 999px; background: oklch(0.12 0.015 20 / 75%); color: oklch(0.95 0.04 25); font-size: 0.72rem; letter-spacing: 0.08em; pointer-events: none; }
+.birthday-cut-line { top: 95px; z-index: 4; width: 4px; border-radius: 999px; background: oklch(0.94 0.08 45); box-shadow: 0 0 12px oklch(0.95 0.15 50 / 75%); pointer-events: none; }
+.birthday-knife { z-index: 6; width: 32px; height: 32px; border: 2px solid oklch(0.9 0.04 20); border-radius: 50%; background: oklch(0.25 0.03 20 / 90%); color: oklch(0.98 0.04 30); line-height: 28px; box-shadow: 0 0 18px oklch(0.95 0.1 30 / 35%); pointer-events: none; }
 .birthday-cake-plate { top: 231px; width: 85%; height: 18px; border-radius: 50%; background: oklch(0.8 0.025 20); }
 .birthday-ending { background: radial-gradient(ellipse at 50% 30%, oklch(0.35 0.08 12 / 18%), transparent 65%); }
 @media (max-width: 639px) {
