@@ -45,7 +45,7 @@ export type SuriMemory = {
 
 export const suriConfig = {
   meta: {
-    /** Browser tab / share title. Kept private: the site is noindex,nofollow. */
+    /** Browser tab / share title. noindex/nofollow does not make a public URL private. */
     title: "Project SURI — Pieces of Us",
     description: "A birthday world for Suri, made with love by Raja.",
     projectName: "PROJECT SURI",
@@ -70,7 +70,7 @@ export const suriConfig = {
     worldTitle: "Welcome to Suri's world",
     worldNote: "Created, crafted, and designed with love and time by your most handsome and great BAAVA. Hehe.",
     chapters: [
-      { number: "01", title: "The little girl who became you", body: "From childhood to the person I am so proud of today.", mediaLabel: "Childhood photo chosen by Raja", imageSrc: "/media/childhood.jpg", ready: false },
+      { number: "01", title: "The little girl who became you", body: "From childhood to the person I am so proud of today.", mediaLabel: "A little beginning, with a photo still to come", imageSrc: "/media/childhood.jpg", ready: false },
       { number: "02", title: "Every version of Suri", body: "The soft, the playful, the determined — all of you belongs here.", mediaLabel: "Susritha in a red celebration outfit", imageSrc: "/media/suri-now.jpg", ready: true },
       { number: "03", title: "And then, us", body: "Small moments became our favourite story.", mediaLabel: "Susritha and Raja together", imageSrc: "/media/us-together.jpg", ready: true },
     ],
@@ -198,7 +198,7 @@ export const suriConfig = {
   justMe: {
     title: "Just me",
     subtitle: "One photograph from me, looking up at the sky we made.",
-    note: "Replace these in src/config/suri.config.ts → media",
+    note: "A quiet moment before the sky lights up.",
   },
 
   media: {

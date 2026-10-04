@@ -1,7 +1,7 @@
 import { suriConfig } from "@/config/suri.config";
 import { Reveal } from "../Reveal";
 import { SoftLink } from "../SoftButton";
-import { AudioPlaceholder, AudioPlayer } from "../AudioPlayer";
+import { AudioPlayer } from "../AudioPlayer";
 
 export function Closing() {
   const { closing, birthday, contact, media } = suriConfig;
@@ -21,9 +21,9 @@ export function Closing() {
           </p>
         </Reveal>
 
-        <Reveal delay={150} className="mx-auto mt-12 max-w-md text-left">
-          {media.voice.ready ? <AudioPlayer src={media.voice.src} title={media.voice.title} subtitle={media.voice.subtitle} /> : <AudioPlaceholder text="Raja's final birthday voice message will play here." />}
-        </Reveal>
+        {media.voice.ready && <Reveal delay={150} className="mx-auto mt-12 max-w-md text-left">
+          <AudioPlayer src={media.voice.src} title={media.voice.title} subtitle={media.voice.subtitle} />
+        </Reveal>}
 
         <Reveal delay={220} className="mt-10 flex flex-wrap justify-center gap-3">
           {contact.primary.enabled && (

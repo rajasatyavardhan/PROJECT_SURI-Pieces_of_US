@@ -147,7 +147,7 @@ export function PhotoSky() {
         </Reveal>
         <Reveal delay={130} className="birthday-sky-stage" aria-label="Heart-shaped preview of the photo mosaic">
           <div className="birthday-sky-glow" aria-hidden="true" />
-          <div key={burst} className={`birthday-heart-grid ${burst > 0 ? "birthday-heart-grid-lit" : ""}`}>
+          <div key={`heart-${burst}`} className={`birthday-heart-grid ${burst > 0 ? "birthday-heart-grid-lit" : ""}`}>
             {heartCells.map((cell, index) => {
               if (cell === "0") return <span key={index} aria-hidden="true" />;
               const memory = approved.length ? approved[photoIndex++ % approved.length] : undefined;
@@ -156,7 +156,7 @@ export function PhotoSky() {
               </span>;
             })}
           </div>
-          {burst > 0 && <div key={burst} className="birthday-burst" aria-hidden="true">
+          {burst > 0 && <div key={`burst-${burst}`} className="birthday-burst" aria-hidden="true">
             {Array.from({ length: 18 }, (_, index) => <span key={index} style={{ transform: `rotate(${index * 20}deg)` }} />)}
             {approved.length > 0 && Array.from({ length: 8 }, (_, index) => {
               const memory = approved[(burst * 7 + index) % approved.length];
