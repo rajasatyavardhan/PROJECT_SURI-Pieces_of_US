@@ -84,6 +84,23 @@ export const suriConfig = {
     endingTitle: "Happy 20th birthday, my bujji bangaru maradhala Susritha Bujjodaa.",
   },
 
+  /** Aggregate-only snapshot of one private Telegram chat export. No messages,
+   * names, media paths, or visitor tracking are sent to the website.
+   * Refresh these numbers only after processing a newer export privately.
+   */
+  telegramMoments: {
+    title: "Our little Telegram universe",
+    note: "A few numbers from the moments we kept sending each other.",
+    messageEvents: 237774,
+    busiestDay: "Monday",
+    busiestHour: "12 noon",
+    busiestHourZone: "Toronto time",
+    topEmoji: "😂",
+    topEmojiUses: 11825,
+    firstExportedMessage: "5 October 2024",
+    snapshotThrough: "3 October 2026",
+  },
+
   /** ---------------------------------------------------------------- OPENING */
   opening: {
     greeting: "Happy 20th Birthday",

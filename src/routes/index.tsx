@@ -10,6 +10,7 @@ import { Particles } from "@/components/suri/Particles";
 import { Reveal } from "@/components/suri/Reveal";
 import { MemoryGallery } from "@/components/suri/sections/MemoryGallery";
 import { BirthdayCake, PhotoSky, SuriStory, WorldIntro } from "@/components/suri/sections/BirthdayJourney";
+import { TelegramMoments } from "@/components/suri/sections/TelegramMoments";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: suriConfig.meta.title },
       { name: "description", content: suriConfig.meta.description },
-      // Private by design: never indexed, never followed, no analytics, no login.
+      // No visitor tracking or indexing; the optional Telegram story card is a static aggregate snapshot.
       { name: "robots", content: "noindex,nofollow,noarchive,nosnippet,noimageindex" },
       { name: "googlebot", content: "noindex,nofollow" },
       { name: "theme-color", content: "#0a0708" },
@@ -69,6 +70,7 @@ function Index() {
 
             <PhotoSky />
             <BirthdayCake />
+            <TelegramMoments />
 
             {/* The discreet star — easy to miss, lovely to find. */}
             <Reveal className="mx-auto max-w-7xl px-5 pb-6 sm:px-10 lg:px-16">

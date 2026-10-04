@@ -414,8 +414,15 @@
 .birthday-cut-line { top: 95px; z-index: 4; width: 4px; border-radius: 999px; background: oklch(0.94 0.08 45); box-shadow: 0 0 12px oklch(0.95 0.15 50 / 75%); pointer-events: none; }
 .birthday-knife { z-index: 6; width: 32px; height: 32px; border: 2px solid oklch(0.9 0.04 20); border-radius: 50%; background: oklch(0.25 0.03 20 / 90%); color: oklch(0.98 0.04 30); line-height: 28px; box-shadow: 0 0 18px oklch(0.95 0.1 30 / 35%); pointer-events: none; }
 .birthday-cake-plate { top: 231px; width: 85%; height: 18px; border-radius: 50%; background: oklch(0.8 0.025 20); }
+.telegram-moments { background: radial-gradient(ellipse at 50% 30%, oklch(0.35 0.08 12 / 16%), transparent 65%); }
+.telegram-moments-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.telegram-moment-card { display: flex; min-height: 165px; flex-direction: column; justify-content: space-between; gap: 0.75rem; padding: 1.5rem; border: 1px solid oklch(0.76 0.13 12 / 25%); border-radius: 1.25rem; background: linear-gradient(145deg, oklch(0.25 0.035 12 / 90%), oklch(0.16 0.016 12 / 95%)); }
+.telegram-moment-card strong { font-family: Georgia, serif; font-size: clamp(1.7rem, 4vw, 2.7rem); font-weight: 400; line-height: 1.1; color: oklch(0.91 0.07 14); font-variant-numeric: tabular-nums; }
+.telegram-moment-card > span { font-size: 0.66rem; letter-spacing: 0.15em; text-transform: uppercase; color: oklch(0.75 0.025 15); }
 .birthday-ending { background: radial-gradient(ellipse at 50% 30%, oklch(0.35 0.08 12 / 18%), transparent 65%); }
 @media (max-width: 639px) {
+  .telegram-moments-grid { grid-template-columns: 1fr; }
+  .telegram-moment-card { min-height: 135px; }
   .birthday-hero { padding-bottom: 5rem; }
   .birthday-hero-portrait { max-width: 210px; }
   .birthday-portrait-inner > span:first-child { font-size: 4rem; }
