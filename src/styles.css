@@ -459,3 +459,18 @@
 @media (prefers-reduced-motion: reduce) {
   .birthday-burst span::after, .birthday-flame, .birthday-photo-ray img, .birthday-heart-grid-lit .birthday-heart-tile { animation: none; }
 }
+/* Two disjoint collections: one continuous fireworks-to-mosaic flight. */
+.photo-finale { background: radial-gradient(ellipse at 50% 40%, #63394724, transparent 65%); }
+.mosaic-scene { text-align: center; }
+.mosaic-canvas-wrap { position: relative; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 1.5rem; background: radial-gradient(ellipse at center, #39243e, #160d21); border: 1px solid #e7bdcb25; box-shadow: 0 24px 100px #0005; }
+.mosaic-canvas { display: block; width: 100%; height: 100%; }
+.mosaic-invitation { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; padding: 2rem; color: #eecbd7; background: radial-gradient(ellipse at center, #39243e, #160d21); }
+.mosaic-invitation span { font-size: .75rem; color: #bd9caf; }
+.mosaic-status { min-height: 3rem; margin: 1.25rem auto .5rem; max-width: 28rem; color: #d7b9c8; font-size: .875rem; }
+.mosaic-skip { display: block; margin: 1rem auto; padding: .75rem; font-size: .75rem; color: #e6bbc9; text-decoration: underline; text-underline-offset: 4px; }
+.suri-butterflies { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 15; }
+.suri-butterfly { position: absolute; left: calc(8% + var(--butterfly-index) * 16%); top: 110%; color: #e6b9d4; opacity: 0; filter: drop-shadow(0 0 8px #edc1dd50); animation: butterfly-drift calc(25s + var(--butterfly-index) * 3s) linear infinite; animation-delay: calc(var(--butterfly-index) * 5s); }
+.butterfly-left, .butterfly-right { transform-box: fill-box; transform-origin: center; animation: butterfly-flutter .65s ease-in-out infinite alternate; }
+@keyframes butterfly-drift { 0% { opacity: 0; transform: translate(0, 0) rotate(-12deg); } 8%, 78% { opacity: .55; } 35% { transform: translate(45px, -45vh) rotate(15deg); } 65% { transform: translate(-35px, -85vh) rotate(-18deg); } 100% { opacity: 0; transform: translate(25px, -125vh) rotate(12deg); } }
+@keyframes butterfly-flutter { to { transform: scaleX(.35); } }
+@media (prefers-reduced-motion: reduce) { .suri-butterflies { display: none; } }

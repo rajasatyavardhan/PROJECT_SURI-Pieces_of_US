@@ -30,7 +30,7 @@ export function Opening({ onEnter }: { onEnter: () => void }) {
         </div>
 
         <div className="birthday-hero-portrait mx-auto flex w-full max-w-[360px] items-center justify-center lg:max-w-[450px]" aria-label="Portrait space reserved for Suri's chosen hero photo">
-          {suriConfig.media.hero.ready ? <img src={suriConfig.media.hero.src} alt={suriConfig.media.hero.alt} className="h-full w-full rounded-[inherit] object-cover" /> : <div className="birthday-portrait-inner">
+          {suriConfig.media.hero.ready ? <img src={suriConfig.media.hero.src} alt={suriConfig.media.hero.alt} className="h-full w-full rounded-[inherit] object-contain" /> : <div className="birthday-portrait-inner">
             <span className="font-serif text-7xl text-primary/80 sm:text-8xl" aria-hidden="true">S</span>
             <span className="mt-3 text-center text-[11px] uppercase tracking-[0.24em] text-foreground/70">Her favourite portrait<br />will appear here</span>
           </div>}

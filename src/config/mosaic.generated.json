@@ -1,0 +1,3871 @@
+{
+  "scenes": [
+    {
+      "target": "/media/mosaic-target-1.webp",
+      "columns": 13,
+      "rows": 17,
+      "tiles": [
+        {
+          "src": "/media/mosaic/piece-0001.webp",
+          "cell": 1,
+          "color": [
+            116,
+            120,
+            113
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0003.webp",
+          "cell": 55,
+          "color": [
+            100,
+            105,
+            92
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0005.webp",
+          "cell": 165,
+          "color": [
+            126,
+            109,
+            101
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0007.webp",
+          "cell": 175,
+          "color": [
+            158,
+            150,
+            145
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0009.webp",
+          "cell": 187,
+          "color": [
+            129,
+            106,
+            97
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0011.webp",
+          "cell": 161,
+          "color": [
+            152,
+            135,
+            129
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0013.webp",
+          "cell": 199,
+          "color": [
+            96,
+            99,
+            100
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0015.webp",
+          "cell": 184,
+          "color": [
+            19,
+            14,
+            8
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0017.webp",
+          "cell": 188,
+          "color": [
+            154,
+            138,
+            130
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0019.webp",
+          "cell": 190,
+          "color": [
+            188,
+            184,
+            178
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0021.webp",
+          "cell": 174,
+          "color": [
+            124,
+            88,
+            72
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0023.webp",
+          "cell": 123,
+          "color": [
+            146,
+            129,
+            116
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0025.webp",
+          "cell": 54,
+          "color": [
+            137,
+            137,
+            118
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0027.webp",
+          "cell": 69,
+          "color": [
+            125,
+            131,
+            115
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0029.webp",
+          "cell": 166,
+          "color": [
+            82,
+            81,
+            75
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0031.webp",
+          "cell": 167,
+          "color": [
+            58,
+            61,
+            58
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0033.webp",
+          "cell": 49,
+          "color": [
+            164,
+            170,
+            166
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0035.webp",
+          "cell": 122,
+          "color": [
+            102,
+            89,
+            86
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0037.webp",
+          "cell": 40,
+          "color": [
+            157,
+            156,
+            142
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0039.webp",
+          "cell": 14,
+          "color": [
+            85,
+            91,
+            88
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0041.webp",
+          "cell": 124,
+          "color": [
+            182,
+            181,
+            176
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0043.webp",
+          "cell": 76,
+          "color": [
+            108,
+            114,
+            109
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0045.webp",
+          "cell": 183,
+          "color": [
+            18,
+            15,
+            9
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0047.webp",
+          "cell": 42,
+          "color": [
+            108,
+            115,
+            110
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0049.webp",
+          "cell": 160,
+          "color": [
+            159,
+            147,
+            139
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0051.webp",
+          "cell": 173,
+          "color": [
+            153,
+            149,
+            143
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0053.webp",
+          "cell": 64,
+          "color": [
+            99,
+            108,
+            106
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0055.webp",
+          "cell": 29,
+          "color": [
+            123,
+            131,
+            125
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0057.webp",
+          "cell": 56,
+          "color": [
+            91,
+            105,
+            97
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0059.webp",
+          "cell": 197,
+          "color": [
+            106,
+            86,
+            51
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0061.webp",
+          "cell": 41,
+          "color": [
+            164,
+            163,
+            153
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0063.webp",
+          "cell": 28,
+          "color": [
+            133,
+            134,
+            131
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0065.webp",
+          "cell": 168,
+          "color": [
+            42,
+            43,
+            35
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0067.webp",
+          "cell": 134,
+          "color": [
+            170,
+            174,
+            172
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0069.webp",
+          "cell": 43,
+          "color": [
+            127,
+            138,
+            133
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0071.webp",
+          "cell": 15,
+          "color": [
+            105,
+            110,
+            110
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0073.webp",
+          "cell": 53,
+          "color": [
+            113,
+            126,
+            95
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0075.webp",
+          "cell": 3,
+          "color": [
+            105,
+            115,
+            112
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0077.webp",
+          "cell": 77,
+          "color": [
+            84,
+            92,
+            90
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0079.webp",
+          "cell": 96,
+          "color": [
+            105,
+            116,
+            105
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0081.webp",
+          "cell": 39,
+          "color": [
+            67,
+            76,
+            69
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0083.webp",
+          "cell": 180,
+          "color": [
+            26,
+            27,
+            24
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0085.webp",
+          "cell": 162,
+          "color": [
+            151,
+            144,
+            141
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0087.webp",
+          "cell": 178,
+          "color": [
+            88,
+            69,
+            61
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0089.webp",
+          "cell": 81,
+          "color": [
+            94,
+            107,
+            83
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0091.webp",
+          "cell": 2,
+          "color": [
+            100,
+            108,
+            108
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0093.webp",
+          "cell": 27,
+          "color": [
+            82,
+            88,
+            86
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0095.webp",
+          "cell": 51,
+          "color": [
+            94,
+            103,
+            104
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0097.webp",
+          "cell": 90,
+          "color": [
+            82,
+            94,
+            84
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0099.webp",
+          "cell": 50,
+          "color": [
+            147,
+            151,
+            147
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0101.webp",
+          "cell": 149,
+          "color": [
+            184,
+            181,
+            179
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0103.webp",
+          "cell": 0,
+          "color": [
+            59,
+            72,
+            75
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0105.webp",
+          "cell": 37,
+          "color": [
+            102,
+            112,
+            114
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0107.webp",
+          "cell": 65,
+          "color": [
+            43,
+            59,
+            49
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0109.webp",
+          "cell": 26,
+          "color": [
+            59,
+            68,
+            67
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0111.webp",
+          "cell": 111,
+          "color": [
+            81,
+            80,
+            84
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0113.webp",
+          "cell": 72,
+          "color": [
+            163,
+            171,
+            130
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0115.webp",
+          "cell": 70,
+          "color": [
+            162,
+            171,
+            155
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0117.webp",
+          "cell": 67,
+          "color": [
+            91,
+            108,
+            85
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0119.webp",
+          "cell": 112,
+          "color": [
+            98,
+            113,
+            106
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0121.webp",
+          "cell": 16,
+          "color": [
+            120,
+            130,
+            129
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0123.webp",
+          "cell": 57,
+          "color": [
+            166,
+            175,
+            170
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0125.webp",
+          "cell": 182,
+          "color": [
+            16,
+            14,
+            8
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0127.webp",
+          "cell": 110,
+          "color": [
+            81,
+            79,
+            79
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0129.webp",
+          "cell": 68,
+          "color": [
+            102,
+            112,
+            90
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0131.webp",
+          "cell": 89,
+          "color": [
+            98,
+            117,
+            89
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0133.webp",
+          "cell": 11,
+          "color": [
+            90,
+            104,
+            108
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0135.webp",
+          "cell": 63,
+          "color": [
+            145,
+            148,
+            142
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0137.webp",
+          "cell": 85,
+          "color": [
+            117,
+            138,
+            98
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0139.webp",
+          "cell": 214,
+          "color": [
+            16,
+            18,
+            14
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0141.webp",
+          "cell": 191,
+          "color": [
+            80,
+            64,
+            54
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0143.webp",
+          "cell": 25,
+          "color": [
+            81,
+            95,
+            98
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0145.webp",
+          "cell": 194,
+          "color": [
+            22,
+            19,
+            15
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0147.webp",
+          "cell": 185,
+          "color": [
+            31,
+            31,
+            29
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0149.webp",
+          "cell": 212,
+          "color": [
+            21,
+            21,
+            15
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0151.webp",
+          "cell": 86,
+          "color": [
+            98,
+            121,
+            87
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0153.webp",
+          "cell": 73,
+          "color": [
+            139,
+            159,
+            109
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0155.webp",
+          "cell": 158,
+          "color": [
+            80,
+            87,
+            67
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0157.webp",
+          "cell": 93,
+          "color": [
+            80,
+            97,
+            77
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0159.webp",
+          "cell": 74,
+          "color": [
+            144,
+            163,
+            121
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0161.webp",
+          "cell": 83,
+          "color": [
+            122,
+            138,
+            91
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0163.webp",
+          "cell": 62,
+          "color": [
+            146,
+            152,
+            146
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0165.webp",
+          "cell": 101,
+          "color": [
+            79,
+            98,
+            78
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0167.webp",
+          "cell": 84,
+          "color": [
+            140,
+            157,
+            97
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0169.webp",
+          "cell": 164,
+          "color": [
+            192,
+            191,
+            188
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0171.webp",
+          "cell": 171,
+          "color": [
+            90,
+            72,
+            53
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0173.webp",
+          "cell": 38,
+          "color": [
+            84,
+            96,
+            99
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0175.webp",
+          "cell": 126,
+          "color": [
+            156,
+            168,
+            156
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0177.webp",
+          "cell": 87,
+          "color": [
+            100,
+            125,
+            86
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0179.webp",
+          "cell": 218,
+          "color": [
+            97,
+            77,
+            52
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0181.webp",
+          "cell": 143,
+          "color": [
+            19,
+            27,
+            17
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0183.webp",
+          "cell": 99,
+          "color": [
+            84,
+            99,
+            90
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0185.webp",
+          "cell": 192,
+          "color": [
+            12,
+            14,
+            12
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0187.webp",
+          "cell": 75,
+          "color": [
+            151,
+            161,
+            135
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0189.webp",
+          "cell": 97,
+          "color": [
+            86,
+            100,
+            94
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0191.webp",
+          "cell": 151,
+          "color": [
+            198,
+            194,
+            189
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0193.webp",
+          "cell": 4,
+          "color": [
+            183,
+            184,
+            181
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0195.webp",
+          "cell": 36,
+          "color": [
+            163,
+            169,
+            170
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0197.webp",
+          "cell": 139,
+          "color": [
+            192,
+            193,
+            188
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0199.webp",
+          "cell": 23,
+          "color": [
+            139,
+            150,
+            153
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0201.webp",
+          "cell": 186,
+          "color": [
+            185,
+            190,
+            191
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0203.webp",
+          "cell": 82,
+          "color": [
+            118,
+            135,
+            85
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0205.webp",
+          "cell": 30,
+          "color": [
+            190,
+            193,
+            189
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0207.webp",
+          "cell": 88,
+          "color": [
+            101,
+            126,
+            84
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0209.webp",
+          "cell": 202,
+          "color": [
+            69,
+            74,
+            75
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0211.webp",
+          "cell": 152,
+          "color": [
+            193,
+            193,
+            189
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0213.webp",
+          "cell": 12,
+          "color": [
+            87,
+            102,
+            104
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0215.webp",
+          "cell": 136,
+          "color": [
+            196,
+            197,
+            195
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0217.webp",
+          "cell": 24,
+          "color": [
+            88,
+            103,
+            107
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0219.webp",
+          "cell": 100,
+          "color": [
+            80,
+            99,
+            82
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0221.webp",
+          "cell": 135,
+          "color": [
+            206,
+            201,
+            197
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0223.webp",
+          "cell": 10,
+          "color": [
+            198,
+            203,
+            200
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0225.webp",
+          "cell": 138,
+          "color": [
+            205,
+            202,
+            197
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0227.webp",
+          "cell": 95,
+          "color": [
+            105,
+            130,
+            77
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0229.webp",
+          "cell": 147,
+          "color": [
+            202,
+            203,
+            202
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0231.webp",
+          "cell": 177,
+          "color": [
+            204,
+            204,
+            203
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0233.webp",
+          "cell": 148,
+          "color": [
+            207,
+            206,
+            205
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0235.webp",
+          "cell": 176,
+          "color": [
+            211,
+            210,
+            205
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0237.webp",
+          "cell": 71,
+          "color": [
+            219,
+            217,
+            191
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0239.webp",
+          "cell": 150,
+          "color": [
+            211,
+            213,
+            211
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0241.webp",
+          "cell": 208,
+          "color": [
+            98,
+            80,
+            51
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0243.webp",
+          "cell": 137,
+          "color": [
+            210,
+            214,
+            212
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0245.webp",
+          "cell": 103,
+          "color": [
+            93,
+            117,
+            78
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0247.webp",
+          "cell": 105,
+          "color": [
+            92,
+            117,
+            79
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0249.webp",
+          "cell": 189,
+          "color": [
+            216,
+            218,
+            215
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0251.webp",
+          "cell": 193,
+          "color": [
+            12,
+            14,
+            12
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0253.webp",
+          "cell": 104,
+          "color": [
+            96,
+            120,
+            71
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0255.webp",
+          "cell": 94,
+          "color": [
+            93,
+            113,
+            73
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0257.webp",
+          "cell": 102,
+          "color": [
+            86,
+            109,
+            80
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0259.webp",
+          "cell": 116,
+          "color": [
+            89,
+            113,
+            73
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0261.webp",
+          "cell": 121,
+          "color": [
+            80,
+            100,
+            76
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0263.webp",
+          "cell": 115,
+          "color": [
+            81,
+            105,
+            75
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0265.webp",
+          "cell": 108,
+          "color": [
+            78,
+            101,
+            71
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0267.webp",
+          "cell": 92,
+          "color": [
+            78,
+            99,
+            69
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0269.webp",
+          "cell": 163,
+          "color": [
+            218,
+            221,
+            218
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0271.webp",
+          "cell": 17,
+          "color": [
+            220,
+            221,
+            217
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0273.webp",
+          "cell": 114,
+          "color": [
+            73,
+            98,
+            75
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0275.webp",
+          "cell": 125,
+          "color": [
+            220,
+            224,
+            225
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0277.webp",
+          "cell": 209,
+          "color": [
+            99,
+            80,
+            49
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0279.webp",
+          "cell": 98,
+          "color": [
+            64,
+            81,
+            93
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0281.webp",
+          "cell": 106,
+          "color": [
+            73,
+            94,
+            66
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0283.webp",
+          "cell": 61,
+          "color": [
+            231,
+            233,
+            231
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0285.webp",
+          "cell": 210,
+          "color": [
+            98,
+            78,
+            47
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0287.webp",
+          "cell": 52,
+          "color": [
+            73,
+            93,
+            66
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0289.webp",
+          "cell": 59,
+          "color": [
+            241,
+            241,
+            235
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0291.webp",
+          "cell": 107,
+          "color": [
+            72,
+            94,
+            60
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0293.webp",
+          "cell": 113,
+          "color": [
+            64,
+            87,
+            70
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0295.webp",
+          "cell": 109,
+          "color": [
+            65,
+            75,
+            75
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0297.webp",
+          "cell": 181,
+          "color": [
+            32,
+            32,
+            25
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0299.webp",
+          "cell": 206,
+          "color": [
+            67,
+            58,
+            40
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0301.webp",
+          "cell": 44,
+          "color": [
+            242,
+            243,
+            240
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0303.webp",
+          "cell": 130,
+          "color": [
+            20,
+            30,
+            20
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0305.webp",
+          "cell": 131,
+          "color": [
+            17,
+            28,
+            19
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0307.webp",
+          "cell": 60,
+          "color": [
+            247,
+            247,
+            244
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0309.webp",
+          "cell": 5,
+          "color": [
+            248,
+            249,
+            248
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0311.webp",
+          "cell": 213,
+          "color": [
+            4,
+            11,
+            12
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0313.webp",
+          "cell": 153,
+          "color": [
+            60,
+            70,
+            60
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0315.webp",
+          "cell": 13,
+          "color": [
+            65,
+            75,
+            74
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0317.webp",
+          "cell": 58,
+          "color": [
+            250,
+            250,
+            246
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0319.webp",
+          "cell": 79,
+          "color": [
+            64,
+            83,
+            68
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0321.webp",
+          "cell": 80,
+          "color": [
+            63,
+            79,
+            66
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0323.webp",
+          "cell": 211,
+          "color": [
+            91,
+            71,
+            43
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0325.webp",
+          "cell": 198,
+          "color": [
+            83,
+            70,
+            48
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0327.webp",
+          "cell": 78,
+          "color": [
+            63,
+            83,
+            57
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0329.webp",
+          "cell": 66,
+          "color": [
+            59,
+            76,
+            61
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0331.webp",
+          "cell": 48,
+          "color": [
+            248,
+            250,
+            249
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0333.webp",
+          "cell": 129,
+          "color": [
+            62,
+            78,
+            56
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0335.webp",
+          "cell": 200,
+          "color": [
+            47,
+            42,
+            42
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0337.webp",
+          "cell": 219,
+          "color": [
+            84,
+            70,
+            46
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0339.webp",
+          "cell": 195,
+          "color": [
+            83,
+            68,
+            42
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0341.webp",
+          "cell": 127,
+          "color": [
+            59,
+            82,
+            56
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0343.webp",
+          "cell": 18,
+          "color": [
+            251,
+            253,
+            252
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0345.webp",
+          "cell": 128,
+          "color": [
+            60,
+            77,
+            55
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0347.webp",
+          "cell": 118,
+          "color": [
+            57,
+            75,
+            50
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0349.webp",
+          "cell": 205,
+          "color": [
+            70,
+            58,
+            41
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0351.webp",
+          "cell": 32,
+          "color": [
+            249,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0353.webp",
+          "cell": 120,
+          "color": [
+            53,
+            73,
+            46
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0355.webp",
+          "cell": 91,
+          "color": [
+            53,
+            71,
+            46
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0357.webp",
+          "cell": 220,
+          "color": [
+            92,
+            45,
+            34
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0359.webp",
+          "cell": 7,
+          "color": [
+            250,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0361.webp",
+          "cell": 196,
+          "color": [
+            68,
+            55,
+            35
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0363.webp",
+          "cell": 201,
+          "color": [
+            32,
+            33,
+            33
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0365.webp",
+          "cell": 217,
+          "color": [
+            62,
+            53,
+            39
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0367.webp",
+          "cell": 20,
+          "color": [
+            250,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0369.webp",
+          "cell": 172,
+          "color": [
+            51,
+            51,
+            45
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0371.webp",
+          "cell": 204,
+          "color": [
+            56,
+            50,
+            40
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0373.webp",
+          "cell": 140,
+          "color": [
+            43,
+            59,
+            46
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0375.webp",
+          "cell": 21,
+          "color": [
+            250,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0377.webp",
+          "cell": 33,
+          "color": [
+            250,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0379.webp",
+          "cell": 34,
+          "color": [
+            250,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0381.webp",
+          "cell": 207,
+          "color": [
+            69,
+            42,
+            31
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0383.webp",
+          "cell": 8,
+          "color": [
+            249,
+            255,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0385.webp",
+          "cell": 19,
+          "color": [
+            250,
+            255,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0387.webp",
+          "cell": 6,
+          "color": [
+            250,
+            255,
+            254
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0389.webp",
+          "cell": 117,
+          "color": [
+            47,
+            60,
+            34
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0391.webp",
+          "cell": 159,
+          "color": [
+            42,
+            50,
+            45
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0393.webp",
+          "cell": 46,
+          "color": [
+            252,
+            255,
+            255
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0395.webp",
+          "cell": 47,
+          "color": [
+            252,
+            255,
+            255
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0397.webp",
+          "cell": 119,
+          "color": [
+            40,
+            56,
+            43
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0399.webp",
+          "cell": 146,
+          "color": [
+            40,
+            53,
+            45
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0401.webp",
+          "cell": 45,
+          "color": [
+            253,
+            255,
+            255
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0403.webp",
+          "cell": 9,
+          "color": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0405.webp",
+          "cell": 156,
+          "color": [
+            43,
+            49,
+            36
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0407.webp",
+          "cell": 154,
+          "color": [
+            36,
+            50,
+            36
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0409.webp",
+          "cell": 203,
+          "color": [
+            36,
+            42,
+            44
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0411.webp",
+          "cell": 22,
+          "color": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0413.webp",
+          "cell": 31,
+          "color": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0415.webp",
+          "cell": 141,
+          "color": [
+            35,
+            49,
+            38
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0417.webp",
+          "cell": 155,
+          "color": [
+            36,
+            48,
+            36
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0419.webp",
+          "cell": 170,
+          "color": [
+            43,
+            36,
+            23
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0421.webp",
+          "cell": 35,
+          "color": [
+            255,
+            255,
+            255
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0423.webp",
+          "cell": 133,
+          "color": [
+            27,
+            42,
+            33
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0425.webp",
+          "cell": 142,
+          "color": [
+            27,
+            39,
+            34
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0427.webp",
+          "cell": 157,
+          "color": [
+            31,
+            40,
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "target": "/media/mosaic-target-2.webp",
+      "columns": 13,
+      "rows": 17,
+      "tiles": [
+        {
+          "src": "/media/mosaic/piece-0002.webp",
+          "cell": 63,
+          "color": [
+            123,
+            127,
+            120
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0004.webp",
+          "cell": 92,
+          "color": [
+            96,
+            101,
+            95
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0006.webp",
+          "cell": 52,
+          "color": [
+            160,
+            156,
+            148
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0008.webp",
+          "cell": 47,
+          "color": [
+            187,
+            185,
+            177
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0010.webp",
+          "cell": 76,
+          "color": [
+            121,
+            126,
+            122
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0012.webp",
+          "cell": 40,
+          "color": [
+            106,
+            114,
+            109
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0014.webp",
+          "cell": 48,
+          "color": [
+            159,
+            159,
+            149
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0016.webp",
+          "cell": 61,
+          "color": [
+            136,
+            142,
+            130
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0018.webp",
+          "cell": 60,
+          "color": [
+            158,
+            160,
+            145
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0020.webp",
+          "cell": 64,
+          "color": [
+            120,
+            126,
+            118
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0022.webp",
+          "cell": 27,
+          "color": [
+            150,
+            149,
+            142
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0024.webp",
+          "cell": 204,
+          "color": [
+            156,
+            131,
+            115
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0026.webp",
+          "cell": 145,
+          "color": [
+            107,
+            91,
+            82
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0028.webp",
+          "cell": 215,
+          "color": [
+            19,
+            25,
+            32
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0030.webp",
+          "cell": 57,
+          "color": [
+            138,
+            144,
+            135
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0032.webp",
+          "cell": 203,
+          "color": [
+            141,
+            125,
+            112
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0034.webp",
+          "cell": 51,
+          "color": [
+            168,
+            168,
+            160
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0036.webp",
+          "cell": 174,
+          "color": [
+            192,
+            165,
+            162
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0038.webp",
+          "cell": 26,
+          "color": [
+            149,
+            145,
+            135
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0040.webp",
+          "cell": 56,
+          "color": [
+            153,
+            155,
+            144
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0042.webp",
+          "cell": 59,
+          "color": [
+            163,
+            168,
+            154
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0044.webp",
+          "cell": 128,
+          "color": [
+            73,
+            71,
+            68
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0046.webp",
+          "cell": 152,
+          "color": [
+            136,
+            120,
+            108
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0048.webp",
+          "cell": 149,
+          "color": [
+            137,
+            100,
+            92
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0050.webp",
+          "cell": 136,
+          "color": [
+            87,
+            72,
+            71
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0052.webp",
+          "cell": 187,
+          "color": [
+            147,
+            136,
+            136
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0054.webp",
+          "cell": 119,
+          "color": [
+            84,
+            79,
+            73
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0056.webp",
+          "cell": 138,
+          "color": [
+            105,
+            95,
+            87
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0058.webp",
+          "cell": 126,
+          "color": [
+            90,
+            87,
+            79
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0060.webp",
+          "cell": 185,
+          "color": [
+            107,
+            101,
+            78
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0062.webp",
+          "cell": 134,
+          "color": [
+            64,
+            60,
+            58
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0064.webp",
+          "cell": 142,
+          "color": [
+            94,
+            85,
+            78
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0066.webp",
+          "cell": 106,
+          "color": [
+            95,
+            93,
+            86
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0068.webp",
+          "cell": 188,
+          "color": [
+            169,
+            139,
+            132
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0070.webp",
+          "cell": 189,
+          "color": [
+            158,
+            143,
+            133
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0072.webp",
+          "cell": 125,
+          "color": [
+            76,
+            73,
+            70
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0074.webp",
+          "cell": 112,
+          "color": [
+            83,
+            84,
+            81
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0076.webp",
+          "cell": 55,
+          "color": [
+            147,
+            150,
+            139
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0078.webp",
+          "cell": 151,
+          "color": [
+            130,
+            115,
+            104
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0080.webp",
+          "cell": 58,
+          "color": [
+            133,
+            144,
+            133
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0082.webp",
+          "cell": 139,
+          "color": [
+            119,
+            108,
+            98
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0084.webp",
+          "cell": 199,
+          "color": [
+            35,
+            41,
+            51
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0086.webp",
+          "cell": 168,
+          "color": [
+            151,
+            127,
+            108
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0088.webp",
+          "cell": 155,
+          "color": [
+            115,
+            102,
+            94
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0090.webp",
+          "cell": 160,
+          "color": [
+            183,
+            169,
+            165
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0092.webp",
+          "cell": 175,
+          "color": [
+            144,
+            118,
+            116
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0094.webp",
+          "cell": 122,
+          "color": [
+            70,
+            61,
+            62
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0096.webp",
+          "cell": 162,
+          "color": [
+            126,
+            126,
+            137
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0098.webp",
+          "cell": 133,
+          "color": [
+            112,
+            102,
+            92
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0100.webp",
+          "cell": 28,
+          "color": [
+            126,
+            131,
+            124
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0102.webp",
+          "cell": 177,
+          "color": [
+            70,
+            66,
+            41
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0104.webp",
+          "cell": 190,
+          "color": [
+            144,
+            129,
+            105
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0106.webp",
+          "cell": 140,
+          "color": [
+            109,
+            96,
+            88
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0108.webp",
+          "cell": 135,
+          "color": [
+            62,
+            54,
+            58
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0110.webp",
+          "cell": 42,
+          "color": [
+            178,
+            180,
+            172
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0112.webp",
+          "cell": 186,
+          "color": [
+            104,
+            99,
+            96
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0114.webp",
+          "cell": 93,
+          "color": [
+            105,
+            112,
+            102
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0116.webp",
+          "cell": 176,
+          "color": [
+            100,
+            84,
+            70
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0118.webp",
+          "cell": 50,
+          "color": [
+            121,
+            127,
+            117
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0120.webp",
+          "cell": 49,
+          "color": [
+            118,
+            125,
+            118
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0122.webp",
+          "cell": 114,
+          "color": [
+            89,
+            87,
+            84
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0124.webp",
+          "cell": 37,
+          "color": [
+            193,
+            191,
+            185
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0126.webp",
+          "cell": 129,
+          "color": [
+            69,
+            70,
+            66
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0128.webp",
+          "cell": 218,
+          "color": [
+            104,
+            91,
+            66
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0130.webp",
+          "cell": 83,
+          "color": [
+            115,
+            126,
+            118
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0132.webp",
+          "cell": 141,
+          "color": [
+            108,
+            98,
+            91
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0134.webp",
+          "cell": 89,
+          "color": [
+            109,
+            118,
+            109
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0136.webp",
+          "cell": 173,
+          "color": [
+            126,
+            112,
+            105
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0138.webp",
+          "cell": 166,
+          "color": [
+            135,
+            107,
+            91
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0140.webp",
+          "cell": 68,
+          "color": [
+            113,
+            125,
+            117
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0142.webp",
+          "cell": 143,
+          "color": [
+            139,
+            118,
+            104
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0144.webp",
+          "cell": 212,
+          "color": [
+            41,
+            44,
+            47
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0146.webp",
+          "cell": 214,
+          "color": [
+            37,
+            43,
+            54
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0148.webp",
+          "cell": 137,
+          "color": [
+            53,
+            45,
+            47
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0150.webp",
+          "cell": 39,
+          "color": [
+            119,
+            119,
+            114
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0152.webp",
+          "cell": 148,
+          "color": [
+            94,
+            82,
+            85
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0154.webp",
+          "cell": 90,
+          "color": [
+            117,
+            124,
+            109
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0156.webp",
+          "cell": 108,
+          "color": [
+            76,
+            77,
+            76
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0158.webp",
+          "cell": 53,
+          "color": [
+            114,
+            120,
+            117
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0160.webp",
+          "cell": 41,
+          "color": [
+            106,
+            115,
+            109
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0162.webp",
+          "cell": 36,
+          "color": [
+            201,
+            198,
+            193
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0164.webp",
+          "cell": 35,
+          "color": [
+            206,
+            204,
+            198
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0166.webp",
+          "cell": 121,
+          "color": [
+            50,
+            49,
+            51
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0168.webp",
+          "cell": 127,
+          "color": [
+            102,
+            95,
+            88
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0170.webp",
+          "cell": 96,
+          "color": [
+            81,
+            88,
+            89
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0172.webp",
+          "cell": 12,
+          "color": [
+            216,
+            214,
+            214
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0174.webp",
+          "cell": 213,
+          "color": [
+            41,
+            47,
+            54
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0176.webp",
+          "cell": 132,
+          "color": [
+            109,
+            98,
+            88
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0178.webp",
+          "cell": 104,
+          "color": [
+            59,
+            62,
+            60
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0180.webp",
+          "cell": 211,
+          "color": [
+            50,
+            64,
+            38
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0182.webp",
+          "cell": 105,
+          "color": [
+            99,
+            94,
+            89
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0184.webp",
+          "cell": 131,
+          "color": [
+            111,
+            101,
+            91
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0186.webp",
+          "cell": 62,
+          "color": [
+            105,
+            115,
+            108
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0188.webp",
+          "cell": 170,
+          "color": [
+            147,
+            142,
+            96
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0190.webp",
+          "cell": 65,
+          "color": [
+            114,
+            121,
+            115
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0192.webp",
+          "cell": 118,
+          "color": [
+            122,
+            112,
+            101
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0194.webp",
+          "cell": 202,
+          "color": [
+            47,
+            53,
+            62
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0196.webp",
+          "cell": 159,
+          "color": [
+            129,
+            107,
+            86
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0198.webp",
+          "cell": 80,
+          "color": [
+            102,
+            113,
+            107
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0200.webp",
+          "cell": 94,
+          "color": [
+            102,
+            111,
+            101
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0202.webp",
+          "cell": 95,
+          "color": [
+            100,
+            111,
+            102
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0204.webp",
+          "cell": 181,
+          "color": [
+            151,
+            155,
+            91
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0206.webp",
+          "cell": 88,
+          "color": [
+            98,
+            106,
+            103
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0208.webp",
+          "cell": 43,
+          "color": [
+            221,
+            221,
+            214
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0210.webp",
+          "cell": 165,
+          "color": [
+            144,
+            116,
+            105
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0212.webp",
+          "cell": 100,
+          "color": [
+            88,
+            92,
+            91
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0214.webp",
+          "cell": 11,
+          "color": [
+            224,
+            220,
+            219
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0216.webp",
+          "cell": 124,
+          "color": [
+            63,
+            58,
+            60
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0218.webp",
+          "cell": 117,
+          "color": [
+            100,
+            96,
+            88
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0220.webp",
+          "cell": 38,
+          "color": [
+            229,
+            226,
+            217
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0222.webp",
+          "cell": 29,
+          "color": [
+            224,
+            226,
+            223
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0224.webp",
+          "cell": 34,
+          "color": [
+            227,
+            227,
+            224
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0226.webp",
+          "cell": 157,
+          "color": [
+            145,
+            118,
+            101
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0228.webp",
+          "cell": 150,
+          "color": [
+            85,
+            73,
+            68
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0230.webp",
+          "cell": 101,
+          "color": [
+            93,
+            95,
+            93
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0232.webp",
+          "cell": 178,
+          "color": [
+            95,
+            87,
+            63
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0234.webp",
+          "cell": 161,
+          "color": [
+            216,
+            221,
+            235
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0236.webp",
+          "cell": 10,
+          "color": [
+            233,
+            228,
+            224
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0238.webp",
+          "cell": 24,
+          "color": [
+            232,
+            229,
+            226
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0240.webp",
+          "cell": 84,
+          "color": [
+            112,
+            120,
+            116
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0242.webp",
+          "cell": 23,
+          "color": [
+            231,
+            230,
+            227
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0244.webp",
+          "cell": 130,
+          "color": [
+            125,
+            113,
+            102
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0246.webp",
+          "cell": 217,
+          "color": [
+            155,
+            118,
+            92
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0248.webp",
+          "cell": 191,
+          "color": [
+            136,
+            128,
+            98
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0250.webp",
+          "cell": 44,
+          "color": [
+            232,
+            231,
+            226
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0252.webp",
+          "cell": 54,
+          "color": [
+            112,
+            119,
+            116
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0254.webp",
+          "cell": 183,
+          "color": [
+            138,
+            151,
+            80
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0256.webp",
+          "cell": 154,
+          "color": [
+            130,
+            112,
+            101
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0258.webp",
+          "cell": 153,
+          "color": [
+            132,
+            111,
+            97
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0260.webp",
+          "cell": 167,
+          "color": [
+            137,
+            119,
+            92
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0262.webp",
+          "cell": 15,
+          "color": [
+            233,
+            232,
+            229
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0264.webp",
+          "cell": 69,
+          "color": [
+            110,
+            122,
+            116
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0266.webp",
+          "cell": 98,
+          "color": [
+            79,
+            83,
+            85
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0268.webp",
+          "cell": 66,
+          "color": [
+            105,
+            115,
+            110
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0270.webp",
+          "cell": 77,
+          "color": [
+            108,
+            118,
+            112
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0272.webp",
+          "cell": 70,
+          "color": [
+            109,
+            120,
+            117
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0274.webp",
+          "cell": 216,
+          "color": [
+            114,
+            99,
+            86
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0276.webp",
+          "cell": 200,
+          "color": [
+            54,
+            62,
+            76
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0278.webp",
+          "cell": 91,
+          "color": [
+            63,
+            66,
+            70
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0280.webp",
+          "cell": 163,
+          "color": [
+            88,
+            82,
+            77
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0282.webp",
+          "cell": 73,
+          "color": [
+            109,
+            124,
+            111
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0284.webp",
+          "cell": 123,
+          "color": [
+            72,
+            63,
+            64
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0286.webp",
+          "cell": 147,
+          "color": [
+            113,
+            98,
+            90
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0288.webp",
+          "cell": 156,
+          "color": [
+            128,
+            110,
+            91
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0290.webp",
+          "cell": 82,
+          "color": [
+            106,
+            121,
+            114
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0292.webp",
+          "cell": 22,
+          "color": [
+            234,
+            233,
+            228
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0294.webp",
+          "cell": 67,
+          "color": [
+            107,
+            118,
+            114
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0296.webp",
+          "cell": 120,
+          "color": [
+            68,
+            67,
+            65
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0298.webp",
+          "cell": 75,
+          "color": [
+            106,
+            118,
+            111
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0300.webp",
+          "cell": 205,
+          "color": [
+            130,
+            119,
+            86
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0302.webp",
+          "cell": 25,
+          "color": [
+            242,
+            238,
+            232
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0304.webp",
+          "cell": 13,
+          "color": [
+            242,
+            240,
+            235
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0306.webp",
+          "cell": 81,
+          "color": [
+            103,
+            115,
+            109
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0308.webp",
+          "cell": 46,
+          "color": [
+            240,
+            240,
+            237
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0310.webp",
+          "cell": 9,
+          "color": [
+            245,
+            241,
+            235
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0312.webp",
+          "cell": 164,
+          "color": [
+            119,
+            103,
+            90
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0314.webp",
+          "cell": 196,
+          "color": [
+            130,
+            145,
+            74
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0316.webp",
+          "cell": 45,
+          "color": [
+            244,
+            244,
+            241
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0318.webp",
+          "cell": 179,
+          "color": [
+            80,
+            76,
+            47
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0320.webp",
+          "cell": 14,
+          "color": [
+            246,
+            244,
+            242
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0322.webp",
+          "cell": 21,
+          "color": [
+            247,
+            247,
+            245
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0324.webp",
+          "cell": 172,
+          "color": [
+            80,
+            75,
+            52
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0326.webp",
+          "cell": 198,
+          "color": [
+            120,
+            121,
+            90
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0328.webp",
+          "cell": 144,
+          "color": [
+            125,
+            106,
+            94
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0330.webp",
+          "cell": 87,
+          "color": [
+            97,
+            108,
+            103
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0332.webp",
+          "cell": 74,
+          "color": [
+            103,
+            116,
+            105
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0334.webp",
+          "cell": 219,
+          "color": [
+            88,
+            101,
+            62
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0336.webp",
+          "cell": 158,
+          "color": [
+            130,
+            109,
+            86
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0338.webp",
+          "cell": 8,
+          "color": [
+            253,
+            253,
+            249
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0340.webp",
+          "cell": 33,
+          "color": [
+            252,
+            253,
+            252
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0342.webp",
+          "cell": 197,
+          "color": [
+            126,
+            139,
+            66
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0344.webp",
+          "cell": 3,
+          "color": [
+            252,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0346.webp",
+          "cell": 102,
+          "color": [
+            93,
+            103,
+            93
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0348.webp",
+          "cell": 86,
+          "color": [
+            102,
+            115,
+            108
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0350.webp",
+          "cell": 4,
+          "color": [
+            252,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0352.webp",
+          "cell": 99,
+          "color": [
+            77,
+            85,
+            85
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0354.webp",
+          "cell": 116,
+          "color": [
+            68,
+            75,
+            72
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0356.webp",
+          "cell": 71,
+          "color": [
+            98,
+            113,
+            112
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0358.webp",
+          "cell": 5,
+          "color": [
+            252,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0360.webp",
+          "cell": 184,
+          "color": [
+            123,
+            137,
+            68
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0362.webp",
+          "cell": 146,
+          "color": [
+            121,
+            99,
+            90
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0364.webp",
+          "cell": 79,
+          "color": [
+            96,
+            106,
+            102
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0366.webp",
+          "cell": 6,
+          "color": [
+            252,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0368.webp",
+          "cell": 72,
+          "color": [
+            96,
+            113,
+            108
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0370.webp",
+          "cell": 85,
+          "color": [
+            97,
+            110,
+            107
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0372.webp",
+          "cell": 171,
+          "color": [
+            122,
+            121,
+            75
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0374.webp",
+          "cell": 7,
+          "color": [
+            252,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0376.webp",
+          "cell": 169,
+          "color": [
+            115,
+            115,
+            77
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0378.webp",
+          "cell": 182,
+          "color": [
+            119,
+            132,
+            71
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0380.webp",
+          "cell": 208,
+          "color": [
+            111,
+            125,
+            73
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0382.webp",
+          "cell": 180,
+          "color": [
+            119,
+            125,
+            67
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0384.webp",
+          "cell": 16,
+          "color": [
+            252,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0386.webp",
+          "cell": 18,
+          "color": [
+            252,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0388.webp",
+          "cell": 195,
+          "color": [
+            111,
+            127,
+            65
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0390.webp",
+          "cell": 194,
+          "color": [
+            119,
+            144,
+            52
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0392.webp",
+          "cell": 19,
+          "color": [
+            252,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0394.webp",
+          "cell": 209,
+          "color": [
+            107,
+            127,
+            60
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0396.webp",
+          "cell": 17,
+          "color": [
+            253,
+            254,
+            253
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0398.webp",
+          "cell": 78,
+          "color": [
+            88,
+            97,
+            95
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0400.webp",
+          "cell": 20,
+          "color": [
+            253,
+            255,
+            254
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0402.webp",
+          "cell": 103,
+          "color": [
+            88,
+            100,
+            90
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0404.webp",
+          "cell": 192,
+          "color": [
+            99,
+            108,
+            62
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0406.webp",
+          "cell": 193,
+          "color": [
+            109,
+            128,
+            49
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0408.webp",
+          "cell": 109,
+          "color": [
+            80,
+            80,
+            80
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0410.webp",
+          "cell": 206,
+          "color": [
+            98,
+            113,
+            57
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0412.webp",
+          "cell": 201,
+          "color": [
+            61,
+            69,
+            82
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0414.webp",
+          "cell": 111,
+          "color": [
+            79,
+            79,
+            80
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0416.webp",
+          "cell": 220,
+          "color": [
+            89,
+            106,
+            60
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0418.webp",
+          "cell": 207,
+          "color": [
+            92,
+            113,
+            47
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0420.webp",
+          "cell": 115,
+          "color": [
+            69,
+            74,
+            73
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0422.webp",
+          "cell": 107,
+          "color": [
+            80,
+            81,
+            75
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0424.webp",
+          "cell": 1,
+          "color": [
+            254,
+            255,
+            254
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0426.webp",
+          "cell": 110,
+          "color": [
+            75,
+            77,
+            77
+          ]
+        },
+        {
+          "src": "/media/mosaic/piece-0428.webp",
+          "cell": 31,
+          "color": [
+            254,
+            255,
+            255
+          ]
+        }
+      ]
+    }
+  ],
+  "uniqueTileCount": 428
+}

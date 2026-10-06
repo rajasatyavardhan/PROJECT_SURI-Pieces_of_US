@@ -9,7 +9,8 @@ import { Closing } from "@/components/suri/sections/Closing";
 import { Particles } from "@/components/suri/Particles";
 import { Reveal } from "@/components/suri/Reveal";
 import { MemoryGallery } from "@/components/suri/sections/MemoryGallery";
-import { BirthdayCake, PhotoSky, SuriStory, WorldIntro } from "@/components/suri/sections/BirthdayJourney";
+import { BirthdayCake, SuriStory, WorldIntro } from "@/components/suri/sections/BirthdayJourney";
+import { Butterflies, PhotoFinale } from "@/components/suri/sections/PhotoFinale";
 import { TelegramMoments } from "@/components/suri/sections/TelegramMoments";
 
 export const Route = createFileRoute("/")({
@@ -41,6 +42,7 @@ function Index() {
   return (
     <main className="relative min-h-[100svh] overflow-x-hidden bg-background">
       <Opening onEnter={enter} />
+      <Butterflies />
 
         <div ref={bodyRef} className="relative">
           <Particles
@@ -68,7 +70,6 @@ function Index() {
               </div>
             </section>
 
-            <PhotoSky />
             <BirthdayCake />
             <TelegramMoments />
 
@@ -77,6 +78,7 @@ function Index() {
               <SecretStar />
             </Reveal>
 
+            <PhotoFinale />
             <Closing />
           </div>
         </div>

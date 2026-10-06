@@ -1,0 +1,106 @@
+[
+  {
+    "id": "extra-01",
+    "imageSrc": "/media/memories/extra-01.webp",
+    "alt": "A little Suri sunshine \u2014 photo chosen by Raja",
+    "title": "A little Suri sunshine",
+    "dateLabel": "",
+    "locationLabel": "",
+    "shortCaption": "",
+    "tags": [
+      "Suri"
+    ],
+    "ready": true
+  },
+  {
+    "id": "extra-02",
+    "imageSrc": "/media/memories/extra-02.webp",
+    "alt": "One more reason to smile \u2014 photo chosen by Raja",
+    "title": "One more reason to smile",
+    "dateLabel": "",
+    "locationLabel": "",
+    "shortCaption": "",
+    "tags": [
+      "Suri"
+    ],
+    "ready": true
+  },
+  {
+    "id": "extra-03",
+    "imageSrc": "/media/memories/extra-03.webp",
+    "alt": "Every little version \u2014 photo chosen by Raja",
+    "title": "Every little version",
+    "dateLabel": "",
+    "locationLabel": "",
+    "shortCaption": "",
+    "tags": [
+      "Suri"
+    ],
+    "ready": true
+  },
+  {
+    "id": "extra-04",
+    "imageSrc": "/media/memories/extra-04.webp",
+    "alt": "A piece of my day \u2014 photo chosen by Raja",
+    "title": "A piece of my day",
+    "dateLabel": "",
+    "locationLabel": "",
+    "shortCaption": "",
+    "tags": [
+      "Raja"
+    ],
+    "ready": true
+  },
+  {
+    "id": "extra-05",
+    "imageSrc": "/media/memories/extra-05.webp",
+    "alt": "From me, with love \u2014 photo chosen by Raja",
+    "title": "From me, with love",
+    "dateLabel": "",
+    "locationLabel": "",
+    "shortCaption": "",
+    "tags": [
+      "Raja"
+    ],
+    "ready": true
+  },
+  {
+    "id": "extra-06",
+    "imageSrc": "/media/memories/extra-06.webp",
+    "alt": "A moment I kept \u2014 photo chosen by Raja",
+    "title": "A moment I kept",
+    "dateLabel": "",
+    "locationLabel": "",
+    "shortCaption": "",
+    "tags": [
+      "Raja"
+    ],
+    "ready": true
+  },
+  {
+    "id": "extra-07",
+    "imageSrc": "/media/memories/extra-07.webp",
+    "alt": "My side of our story \u2014 photo chosen by Raja",
+    "title": "My side of our story",
+    "dateLabel": "",
+    "locationLabel": "",
+    "shortCaption": "",
+    "tags": [
+      "Raja"
+    ],
+    "ready": true
+  },
+  {
+    "id": "extra-08",
+    "imageSrc": "/media/memories/extra-08.webp",
+    "alt": "One more memory for you \u2014 photo chosen by Raja",
+    "title": "One more memory for you",
+    "dateLabel": "",
+    "locationLabel": "",
+    "shortCaption": "",
+    "tags": [
+      "Raja"
+    ],
+    "ready": true
+  }
+]

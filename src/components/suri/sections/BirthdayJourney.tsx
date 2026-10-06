@@ -1,12 +1,7 @@
 import { type PointerEvent, useEffect, useRef, useState } from "react";
-import { Heart, Sparkles } from "lucide-react";
 import { suriConfig } from "@/config/suri.config";
 import { Reveal } from "../Reveal";
 import { SoftButton } from "../SoftButton";
-
-const heartRows = ["0110110", "1111111", "1111111", "0111110", "0011100", "0001000"];
-const heartCells = heartRows.join("").split("");
-const photosPerHeart = heartCells.filter(cell => cell === "1").length;
 
 const torontoFormatter = new Intl.DateTimeFormat("en-CA", {
   timeZone: "America/Toronto",
@@ -109,7 +104,7 @@ export function SuriStory() {
           {birthday.chapters.map((chapter, index) => (
             <Reveal key={chapter.number} delay={index * 90} className="birthday-story-card">
               <div className="birthday-story-image" role="img" aria-label={chapter.mediaLabel}>
-                {chapter.ready ? <img src={chapter.imageSrc} alt={chapter.mediaLabel} loading="lazy" className="h-full w-full object-cover" /> : <>
+                {chapter.ready ? <img src={chapter.imageSrc} alt={chapter.mediaLabel} loading="lazy" className="h-full w-full object-contain" /> : <>
                   <span className="font-serif text-6xl text-primary/45">{chapter.number}</span>
                   <span className="mt-3 max-w-36 text-center text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{chapter.mediaLabel}</span>
                 </>}
@@ -127,51 +122,6 @@ export function SuriStory() {
   );
 }
 
-export function PhotoSky() {
-  const { birthday, memories, mosaicOnlyMemories } = suriConfig;
-  const approved = [...memories, ...mosaicOnlyMemories].filter(memory => memory.ready);
-  const [burst, setBurst] = useState(0);
-  let photoIndex = burst * photosPerHeart;
-
-  return (
-    <section className="birthday-section birthday-sky px-5 py-24 sm:px-10 lg:px-16" aria-labelledby="photo-sky-title">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
-        <Reveal className="max-w-xl">
-          <p className="birthday-eyebrow">05 / The sky we made</p>
-          <h2 id="photo-sky-title" className="birthday-title mt-5">{birthday.skyTitle}</h2>
-          <p className="mt-6 text-base leading-relaxed text-muted-foreground">{birthday.skyBody}</p>
-          <p className="mt-5 text-sm leading-relaxed text-primary/80">Each sparkle reveals another little piece. Photos left out of the main story can still belong in our sky.</p>
-          <SoftButton type="button" onClick={() => setBurst(previous => previous + 1)} className="mt-8 min-h-12 px-7 py-3">
-            <Sparkles className="mr-2 inline h-4 w-4" aria-hidden="true" /> Send a little love skyward
-          </SoftButton>
-        </Reveal>
-        <Reveal delay={130} className="birthday-sky-stage" aria-label="Heart-shaped preview of the photo mosaic">
-          <div className="birthday-sky-glow" aria-hidden="true" />
-          <div key={`heart-${burst}`} className={`birthday-heart-grid ${burst > 0 ? "birthday-heart-grid-lit" : ""}`}>
-            {heartCells.map((cell, index) => {
-              if (cell === "0") return <span key={index} aria-hidden="true" />;
-              const memory = approved.length ? approved[photoIndex++ % approved.length] : undefined;
-              return <span key={index} className="birthday-heart-tile" style={{ animationDelay: `${index * 26}ms` }} aria-hidden="true">
-                {memory ? <img src={memory.imageSrc} alt="" loading="lazy" /> : <Heart className="h-4 w-4 text-primary/60" />}
-              </span>;
-            })}
-          </div>
-          {burst > 0 && <div key={`burst-${burst}`} className="birthday-burst" aria-hidden="true">
-            {Array.from({ length: 18 }, (_, index) => <span key={index} style={{ transform: `rotate(${index * 20}deg)` }} />)}
-            {approved.length > 0 && Array.from({ length: 8 }, (_, index) => {
-              const memory = approved[(burst * 7 + index) % approved.length];
-              if (!memory) return null;
-              return <span key={`photo-${index}`} className="birthday-photo-ray" style={{ transform: `rotate(${index * 45}deg)` }}>
-                <img src={memory.imageSrc} alt="" />
-              </span>;
-            })}
-          </div>}
-          <p className="relative mt-8 text-center font-serif text-2xl text-foreground/80">All our little pieces, one heart.</p>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
 
 export function BirthdayCake() {
   const [stage, setStage] = useState<"lit" | "wished" | "cut">("lit");

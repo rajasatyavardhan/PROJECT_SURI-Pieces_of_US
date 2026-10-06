@@ -133,7 +133,7 @@ export function MemoryGallery() {
                   >
                     <span className="block w-full">
                       <span className={`block ${mediaClass}`}>
-                        <MemoryImage memory={memory} onError={() => markFailed(memory.id)} className="h-full w-full object-cover transition-transform duration-500 motion-reduce:transition-none" />
+                          <MemoryImage memory={memory} onError={() => markFailed(memory.id)} className="h-full w-full object-contain transition-transform duration-500 motion-reduce:transition-none" />
                       </span>
                       <span className="mt-3 block"><MemoryDetails memory={memory} /></span>
                     </span>

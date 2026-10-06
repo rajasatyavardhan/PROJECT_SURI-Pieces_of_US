@@ -23,6 +23,8 @@
  * ============================================================================
  */
 
+import extraGallery from "./gallery.generated.json";
+
 export type ContactAction = {
   enabled: boolean;
   label: string;
@@ -70,8 +72,8 @@ export const suriConfig = {
     worldTitle: "Welcome to Suri's world",
     worldNote: "Created, crafted, and designed with love and time by your most handsome and great BAAVA. Hehe.",
     chapters: [
-      { number: "01", title: "The little girl who became you", body: "From childhood to the person I am so proud of today.", mediaLabel: "A little beginning, with a photo still to come", imageSrc: "/media/childhood.jpg", ready: false },
-      { number: "02", title: "Every version of Suri", body: "The soft, the playful, the determined — all of you belongs here.", mediaLabel: "Susritha in a red celebration outfit", imageSrc: "/media/suri-now.jpg", ready: true },
+      { number: "01", title: "The little girl who became you", body: "From childhood to the person I am so proud of today.", mediaLabel: "Susritha in her younger-years portrait chosen by Raja", imageSrc: "/media/childhood.webp", ready: true },
+      { number: "02", title: "Every version of Suri", body: "The soft, the playful, the determined — all of you belongs here.", mediaLabel: "Susritha dressed for a celebration", imageSrc: "/media/memories/memory-05.webp", ready: true },
       { number: "03", title: "And then, us", body: "Small moments became our favourite story.", mediaLabel: "Susritha and Raja together", imageSrc: "/media/us-together.jpg", ready: true },
     ],
     piecesTitle: "Pieces of us",
@@ -232,6 +234,7 @@ export const suriConfig = {
    * The private role model suggests candidates but never enables an image by itself.
    */
   memories: [
+    ...extraGallery,
     { id: "memory-01", imageSrc: "/media/memories/memory-01.webp", alt: "Susritha in lilac beside a palm tree", title: "A little lilac moment", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Suri"], ready: true },
     { id: "memory-02", imageSrc: "/media/memories/memory-02.webp", alt: "Susritha reflected in a rain-speckled car mirror", title: "The way you see the world", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Suri"], ready: true },
     { id: "memory-03", imageSrc: "/media/memories/memory-03.webp", alt: "Susritha smiling in a red floral outfit", title: "That smile", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Suri"], ready: true },
@@ -242,7 +245,7 @@ export const suriConfig = {
     { id: "memory-08", imageSrc: "/media/memories/memory-08.webp", alt: "Raja smiling beside the falls", title: "From my side of the story", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Raja"], ready: true },
     { id: "memory-09", imageSrc: "/media/memories/memory-09.webp", alt: "Raja looking out toward a waterfall", title: "Looking up at our sky", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Raja"], ready: true },
     { id: "memory-10", imageSrc: "/media/memories/memory-10.webp", alt: "Susritha with family at a celebration", title: "The people around you", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Family"], ready: true },
-  ] as SuriMemory[],
+  ].filter(memory => !["memory-04", "memory-05", "memory-06", "memory-08"].includes(memory.id)) as SuriMemory[],
 
   /** Approved images excluded from the main story but allowed in the photo sky.
    * Populate this with web-ready assets only; never commit review IDs, chat text,

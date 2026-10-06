@@ -21,7 +21,7 @@ export function JustMe() {
               alt={media.photo.alt}
               loading="lazy"
               onError={() => setPhotoFailed(true)}
-              className="aspect-[4/5] w-full rounded-2xl object-cover"
+              className="max-h-[75svh] w-full rounded-2xl object-contain"
             />
             <figcaption className="mt-2 text-xs text-muted-foreground">
               {media.photo.caption}
