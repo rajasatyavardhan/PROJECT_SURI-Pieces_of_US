@@ -39,7 +39,10 @@ export function Closing() {
         </Reveal>
 
         <Reveal delay={300}>
-          <p className="mt-20 text-[11px] tracking-wide text-muted-foreground/50">
+          <svg role="img" aria-label="Raja’s selected 2.1 gold circular signature emblem" viewBox="333 345 220 210" className="mx-auto mt-16 h-24 w-24 rounded-full">
+            <image href="/media/signature-reference.png" width="1533" height="1023" />
+          </svg>
+          <p className="mt-6 text-[11px] tracking-wide text-muted-foreground/70">
             {closing.footer}
           </p>
         </Reveal>

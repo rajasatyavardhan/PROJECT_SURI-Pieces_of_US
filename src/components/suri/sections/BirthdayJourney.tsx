@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { suriConfig } from "@/config/suri.config";
 import { Reveal } from "../Reveal";
+import { PhotoStack } from '../PhotoStack';
+import { storyCollections } from '@/config/photo-collections';
 
 const torontoFormatter = new Intl.DateTimeFormat("en-CA", {
   timeZone: "America/Toronto",
@@ -118,12 +120,7 @@ export function SuriStory() {
         <div className="mt-12 grid gap-6 md:grid-cols-3 lg:gap-8">
           {birthday.chapters.map((chapter, index) => (
             <Reveal key={chapter.number} delay={index * 90} className="birthday-story-card">
-              <div className="birthday-story-image" role="img" aria-label={chapter.mediaLabel}>
-                {chapter.ready ? <img src={chapter.imageSrc} alt={chapter.mediaLabel} loading="lazy" className="h-full w-full object-contain" /> : <>
-                  <span className="font-serif text-6xl text-primary/45">{chapter.number}</span>
-                  <span className="mt-3 max-w-36 text-center text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{chapter.mediaLabel}</span>
-                </>}
-              </div>
+              <PhotoStack photos={storyCollections[index] ?? []} title={chapter.title} />
               <div className="p-6">
                 <h3 className="mt-3 font-serif text-3xl leading-tight">{chapter.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{chapter.body}</p>
@@ -146,8 +143,8 @@ export function MbbsChapter() {
         <p className="mt-6 max-w-xl font-serif text-2xl leading-relaxed text-primary">{chapter.note}</p>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">{chapter.caption}</p>
       </Reveal>
-      <Reveal delay={100} className="birthday-story-card">
-        <img src={chapter.imageSrc} alt={chapter.imageAlt} loading="lazy" className="max-h-[70svh] w-full object-contain" />
+      <Reveal delay={100} className="birthday-story-card mx-auto w-full max-w-[240px]">
+        <img src={chapter.imageSrc} alt={chapter.imageAlt} loading="lazy" className="max-h-[300px] w-full object-contain" />
       </Reveal>
     </div>
     {chapter.videos.length > 0 && <div className="mx-auto mt-10 grid max-w-7xl gap-6 md:grid-cols-2">

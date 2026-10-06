@@ -8,11 +8,12 @@ import { SecretStar } from "@/components/suri/sections/SecretStar";
 import { Closing } from "@/components/suri/sections/Closing";
 import { Particles } from "@/components/suri/Particles";
 import { Reveal } from "@/components/suri/Reveal";
-import { MemoryGallery } from "@/components/suri/sections/MemoryGallery";
+import { PhotoCollections } from '@/components/suri/sections/PhotoCollections';
 import { BirthdayCake, MbbsChapter, SuriStory, WorldIntro } from "@/components/suri/sections/BirthdayJourney";
 import { Butterflies, StoryMosaic } from "@/components/suri/sections/PhotoFinale";
 import { TelegramMoments } from "@/components/suri/sections/TelegramMoments";
-import { PrivateNotes } from "@/components/suri/sections/PrivateNotes";
+import { TelegramContact } from '@/components/suri/sections/TelegramContact';
+import { FloatingMemories } from '@/components/suri/FloatingMemories';
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -44,6 +45,7 @@ function Index() {
     <main className="relative min-h-[100svh] overflow-x-hidden bg-background">
       <Opening onEnter={enter} />
       <Butterflies />
+      <FloatingMemories />
 
         <div ref={bodyRef} className="relative">
           <Particles
@@ -56,7 +58,7 @@ function Index() {
             <WorldIntro />
             <SuriStory />
             <MbbsChapter />
-            <MemoryGallery />
+            <PhotoCollections />
 
             <section className="birthday-section px-5 py-24 sm:px-10 lg:px-16" aria-labelledby="his-side-title">
               <div className="mx-auto max-w-7xl">
@@ -81,7 +83,7 @@ function Index() {
 
             <BirthdayCake />
             <TelegramMoments />
-            <PrivateNotes />
+            <TelegramContact />
 
             {/* The discreet star — easy to miss, lovely to find. */}
             <Reveal className="mx-auto max-w-7xl px-5 pb-6 sm:px-10 lg:px-16">

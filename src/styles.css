@@ -490,3 +490,13 @@
 .cake-candle-flame { transform-origin: 238px 72px; animation: cake-flame 1.1s ease-in-out infinite alternate; }
 @keyframes cake-flame { to { transform: scaleX(.8) rotate(4deg); opacity: .8; } }
 @media (prefers-reduced-motion: reduce) { .cake-candle-flame { animation: none; } }
+.photo-stack-image { display:block; width:100%; height:340px; background:#100b13; touch-action:pan-y; cursor:pointer; }
+.photo-stack-image img { width:100%; height:100%; object-fit:contain; animation: photo-arrival .3s ease-out; }
+.photo-stack-controls { display:flex; align-items:center; justify-content:space-between; gap:.35rem; padding:.4rem .6rem; font-size:.75rem; }
+.photo-stack-controls button { min-height:44px; padding:.5rem; color:#efd0da; }
+.photo-stack button:focus-visible { outline:2px solid #efacc7; outline-offset:-3px; }
+.floating-memories { position:fixed; inset:0; z-index:1; pointer-events:none; overflow:hidden; }
+.floating-memories img { position:absolute; width:60px; height:80px; object-fit:contain; padding:3px; border:1px solid #efacc740; border-radius:6px; opacity:.22; left:calc(2% + var(--memory-index) * 85%); animation:memory-drift 27s linear infinite; animation-delay:calc(var(--memory-index) * -13s); }
+@keyframes memory-drift { from { transform:translateY(105vh) rotate(-9deg); } to { transform:translateY(-100px) rotate(12deg); } }
+@keyframes photo-arrival { from { opacity:.5; } to { opacity:1; } }
+@media (prefers-reduced-motion:reduce) { .floating-memories { display:none; } .photo-stack-image img { animation:none; } }

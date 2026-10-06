@@ -6,8 +6,7 @@ import { Reveal } from "../Reveal";
 import { SoftButton } from "../SoftButton";
 
 type Scene = { target: string; columns: number; rows: number; tiles: { src: string; cell: number; color?: number[] }[] };
-type Stage = "waiting" | "loading" | "flying" | "gathering" | "complete" | "error";
-type Design = "photo" | "heart" | "R" | "S";
+type Stage = "waiting" | "loading" | "flying" | "letters" | "heart" | "gathering" | "complete" | "error";
 const ease = (value: number) => { const t = Math.min(1, Math.max(0, value)); return t * t * (3 - 2 * t); };
 
 export function MosaicScene({ scene, index }: { scene: Scene; index: number }) {
@@ -17,18 +16,18 @@ export function MosaicScene({ scene, index }: { scene: Scene; index: number }) {
   const mounted = useRef(true);
   const skip = useRef(false);
   const loaded = useRef<HTMLImageElement[] | null>(null);
-  const [design, setDesign] = useState<Design>("photo");
+  const replay = useRef(0);
   const [stage, setStage] = useState<Stage>("waiting");
   useEffect(() => {
     mounted.current = true;
     return () => { mounted.current = false; running.current = false; cancelAnimationFrame(frame.current); };
   }, []);
 
-  async function launch(nextDesign: Design = design) {
-    const design = nextDesign;
+  async function launch() {
     if (running.current) return;
     cancelAnimationFrame(frame.current);
     running.current = true;
+    const variation = replay.current++;
     skip.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     canvas.current?.scrollIntoView({ behavior: skip.current ? "auto" : "smooth", block: "center" });
     setStage("loading");
@@ -52,27 +51,18 @@ export function MosaicScene({ scene, index }: { scene: Scene; index: number }) {
       const maskContext = mask.getContext("2d");
       if (!maskContext) throw new Error("Shape canvas unavailable");
       maskContext.fillStyle = "white";
-      if (design === "photo") maskContext.fillRect(0, 0, width, height);
-      else if (design === "heart") {
-        maskContext.beginPath();
-        maskContext.moveTo(360, 235);
-        maskContext.bezierCurveTo(90, 5, -45, 390, 360, 800);
-        maskContext.bezierCurveTo(765, 390, 630, 5, 360, 235);
-        maskContext.fill();
-      } else {
-        maskContext.font = "bold 850px Georgia";
+        maskContext.font = "bold 430px Georgia";
         maskContext.textAlign = "center"; maskContext.textBaseline = "middle";
-        maskContext.fillText(design, width / 2, height / 2 + 30);
-      }
+        maskContext.fillText('R', 190, height / 2);
+        maskContext.fillText('S', 540, height / 2);
       const pixels = maskContext.getImageData(0, 0, width, height).data;
       const candidates: { x: number; y: number }[] = [];
       for (let y = 8; y < height; y += 16) for (let x = 8; x < width; x += 16) {
         if ((pixels[(y * width + x) * 4 + 3] ?? 0) > 128) candidates.push({ x, y });
       }
       if (candidates.length < scene.tiles.length) throw new Error("Not enough unique shape positions");
-      const placements = scene.tiles.map((tile, i) => design === "photo"
-        ? { x: (tile.cell % scene.columns + .5) * width / scene.columns, y: (Math.floor(tile.cell / scene.columns) + .5) * height / scene.rows }
-        : candidates[Math.floor(i * candidates.length / scene.tiles.length)]!);
+      const placements = scene.tiles.map(tile => ({ x: (tile.cell % scene.columns + .5) * width / scene.columns, y: (Math.floor(tile.cell / scene.columns) + .5) * height / scene.rows }));
+      const letters = scene.tiles.map((_, i) => candidates[Math.floor(i * candidates.length / scene.tiles.length)]!);
       // Tint only the selected silhouette; the original picture is never stretched.
       const portrait = document.createElement("canvas"); portrait.width = width; portrait.height = height;
       const portraitContext = portrait.getContext("2d");
@@ -80,44 +70,46 @@ export function MosaicScene({ scene, index }: { scene: Scene; index: number }) {
       const targetRatio = Math.min(width / target.width, height / target.height);
       const tw = target.width * targetRatio, th = target.height * targetRatio;
       portraitContext.drawImage(target, (width - tw) / 2, (height - th) / 2, tw, th);
-      portraitContext.globalCompositeOperation = "destination-in";
-      portraitContext.drawImage(mask, 0, 0);
       const started = performance.now();
       let lastPaint = -Infinity;
       let lastStage: Stage = "loading";
       const draw = (now: number) => {
         if (!mounted.current || !running.current) return;
-        const progress = skip.current ? 1 : Math.min(1, (now - started) / 14000);
+        const progress = skip.current ? 1 : Math.min(1, (now - started) / 19000);
         if (now - lastPaint < 32 && progress < 1) { frame.current = requestAnimationFrame(draw); return; }
         lastPaint = now;
-        const nextStage: Stage = progress === 1 ? "complete" : progress < .55 ? "flying" : "gathering";
+        const nextStage: Stage = progress === 1 ? "complete" : progress < .38 ? "flying" : progress < .56 ? "letters" : progress < .76 ? "heart" : "gathering";
         if (nextStage !== lastStage) { setStage(nextStage); lastStage = nextStage; }
         context.globalAlpha = 1;
         context.fillStyle = "#160d21";
         context.fillRect(0, 0, width, height);
-        const gathering = ease((progress - .55) / .4);
+        const gathering = ease((progress - .76) / .22);
         const tileWidth = width / scene.columns, tileHeight = height / scene.rows;
         scene.tiles.forEach((tile, i) => {
           const image = images[i];
           if (!image) return;
-          const angle = i * 2.399963;
+          const angle = i * 2.399963 + variation * .73;
           const heartX = width / 2 + 16 * Math.sin(angle) ** 3 * 17;
           const heartY = height * .40 - (13 * Math.cos(angle) - 5 * Math.cos(2 * angle) - 2 * Math.cos(3 * angle) - Math.cos(4 * angle)) * 18;
           const delay = (i % 17) * .008;
           const flight = ease((progress - delay) / .16);
           const explosion = ease((progress - .16 - delay) / .14);
-          const formingHeart = ease((progress - .32) / .2);
-          const rocketX = width * (.25 + (i % 4) / 6);
-          const rocketY = height * (.24 + (i % 4) * .055);
+          const formingLetters = ease((progress - .24) / .14);
+          const formingHeart = ease((progress - .56) / .14);
+          const rocketX = width * (.2 + ((i + variation) % 5) / 7);
+          const rocketY = height * (.24 + ((i + variation) % 4) * .055);
           const { x: finalX, y: finalY } = placements[i]!;
           const spreadX = rocketX + Math.cos(angle) * 95 * explosion;
           const spreadY = height * .95 + (rocketY - height * .95) * flight + Math.sin(angle) * 95 * explosion;
-          const burstX = spreadX + (heartX - spreadX) * formingHeart;
-          const burstY = spreadY + (heartY - spreadY) * formingHeart;
+          const letter = letters[i]!;
+          const letterX = spreadX + (letter.x - spreadX) * formingLetters;
+          const letterY = spreadY + (letter.y - spreadY) * formingLetters;
+          const burstX = letterX + (heartX - letterX) * formingHeart;
+          const burstY = letterY + (heartY - letterY) * formingHeart;
           const x = burstX + (finalX - burstX) * gathering;
           const y = burstY + (finalY - burstY) * gathering;
-          const w = 25 + ((design === "photo" ? tileWidth : 34) - 25) * gathering;
-          const h = 34 + ((design === "photo" ? tileHeight : 43) - 34) * gathering;
+          const w = 25 + (tileWidth - 25) * gathering;
+          const h = 34 + (tileHeight - 34) * gathering;
           context.globalAlpha = ease((progress - delay) / .08);
           context.save();
           context.translate(x, y);
@@ -149,19 +141,17 @@ export function MosaicScene({ scene, index }: { scene: Scene; index: number }) {
     }
   }
 
-  const busy = stage === "loading" || stage === "flying" || stage === "gathering";
-  const label = stage === "loading" ? "Gathering our little memories…" : stage === "flying" ? "Look—our photos are lighting up the sky." : stage === "gathering" ? "Every little piece is finding its place…" : stage === "complete" ? "Different little memories. One favourite us." : stage === "error" ? "A photo couldn't load. Please try again." : "A sky full of memories, waiting for your touch.";
+  const busy = !['waiting', 'complete', 'error'].includes(stage);
+  const label = stage === "loading" ? "Gathering our little memories…" : stage === "flying" ? "Look—our photos are lighting up the sky." : stage === "letters" ? "R and S. Side by side, like us." : stage === "heart" ? "Two initials. One heart." : stage === "gathering" ? "Every little piece is finding its place…" : stage === "complete" ? "Different little memories. One favourite us." : stage === "error" ? "A photo couldn't load. Please try again." : "A sky full of memories, waiting for your touch.";
   return <div className="mosaic-scene">
     <div className="mosaic-canvas-wrap">
       <canvas ref={canvas} width={720} height={960} className="mosaic-canvas" role="img" aria-label={`Mosaic ${index + 1}: ${scene.tiles.length} different reviewed photos forming a picture of Susritha and Raja`} />
       {(stage === "waiting" || stage === "loading" || stage === "error") && <div className="mosaic-invitation"><Sparkles aria-hidden="true" size={36} /><p className="font-serif text-4xl">{index === 0 ? "A little sky. A very big us." : "One more little surprise."}</p><span>{scene.tiles.length} different memories · no repeated tiles</span></div>}
     </div>
     <p role="status" className="mosaic-status">{label}</p>
-    <div className="mosaic-designs" role="group" aria-label={`Mosaic ${index + 1} design`}>
-      {(["photo", "heart", "R", "S"] as Design[]).map(option => <button key={option} type="button" aria-pressed={design === option} disabled={busy} onClick={() => { setDesign(option); if (stage === "complete") void launch(option); }}>{option === "photo" ? "Full photo" : option === "heart" ? "Heart ♡" : option}</button>)}
-    </div>
+    <p className="my-4 text-center text-xs text-muted-foreground">Photo fireworks → R + S → a heart → our mosaic. A new little flight on every replay.</p>
     <SoftButton type="button" onClick={() => void launch()} disabled={busy} className="min-h-12 px-7 py-3">{stage === "loading" ? "Gathering memories…" : busy ? "Watch the sky…" : stage === "complete" ? "Replay our photo fireworks ✨" : index === 0 ? "Light up our sky ✨" : "One more surprise ✨"}</SoftButton>
-    {(stage === "flying" || stage === "gathering") && <button type="button" className="mosaic-skip" onClick={() => { skip.current = true; }}>Bring the pieces together now</button>}
+    {busy && stage !== 'loading' && <button type="button" className="mosaic-skip" onClick={() => { skip.current = true; }}>Bring the pieces together now</button>}
   </div>;
 }
 

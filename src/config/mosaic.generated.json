@@ -6,15 +6,6 @@
       "rows": 17,
       "tiles": [
         {
-          "src": "/media/mosaic/piece-0001.webp",
-          "cell": 1,
-          "color": [
-            116,
-            120,
-            113
-          ]
-        },
-        {
           "src": "/media/mosaic/piece-0003.webp",
           "cell": 55,
           "color": [
@@ -1939,15 +1930,6 @@
       "rows": 17,
       "tiles": [
         {
-          "src": "/media/mosaic/piece-0002.webp",
-          "cell": 63,
-          "color": [
-            123,
-            127,
-            120
-          ]
-        },
-        {
           "src": "/media/mosaic/piece-0004.webp",
           "cell": 92,
           "color": [
@@ -3867,5 +3849,5 @@
       ]
     }
   ],
-  "uniqueTileCount": 428
+  "uniqueTileCount": 426
 }
