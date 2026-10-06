@@ -9,7 +9,7 @@ import { Closing } from "@/components/suri/sections/Closing";
 import { Particles } from "@/components/suri/Particles";
 import { Reveal } from "@/components/suri/Reveal";
 import { MemoryGallery } from "@/components/suri/sections/MemoryGallery";
-import { BirthdayCake, SuriStory, WorldIntro } from "@/components/suri/sections/BirthdayJourney";
+import { BirthdayCake, MbbsChapter, SuriStory, WorldIntro } from "@/components/suri/sections/BirthdayJourney";
 import { Butterflies, PhotoFinale } from "@/components/suri/sections/PhotoFinale";
 import { TelegramMoments } from "@/components/suri/sections/TelegramMoments";
 
@@ -54,12 +54,13 @@ function Index() {
           <div className="relative">
             <WorldIntro />
             <SuriStory />
+            <MbbsChapter />
             <MemoryGallery />
 
             <section className="birthday-section px-5 py-24 sm:px-10 lg:px-16" aria-labelledby="his-side-title">
               <div className="mx-auto max-w-7xl">
                 <Reveal>
-                  <p className="birthday-eyebrow">04 / From Raja</p>
+                  <p className="birthday-eyebrow">From Raja</p>
                   <h2 id="his-side-title" className="birthday-title mt-5">{suriConfig.birthday.hisTitle}</h2>
                   <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">{suriConfig.birthday.hisBody}</p>
                 </Reveal>

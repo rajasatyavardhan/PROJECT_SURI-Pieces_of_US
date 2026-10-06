@@ -10,7 +10,8 @@ const configRequire = require('node:module').createRequire(configPath);
 new Function('require','module','exports',compiled)(configRequire,configModule,configModule.exports);
 const config = configModule.exports.suriConfig;
 const mosaic = JSON.parse(fs.readFileSync(path.join(root,'src/config/mosaic.generated.json'),'utf8'));
-const sources = [config.media.hero.src,config.media.photo.src,...config.birthday.chapters.filter(x=>x.ready).map(x=>x.imageSrc),...config.memories.filter(x=>x.ready).map(x=>x.imageSrc),...mosaic.scenes.flatMap(x=>[x.target,...x.tiles.map(t=>t.src)])];
+const sources = [config.media.hero.src,config.media.photo.src,config.mbbs.imageSrc,...config.birthday.chapters.filter(x=>x.ready).map(x=>x.imageSrc),...config.memories.filter(x=>x.ready).map(x=>x.imageSrc),...mosaic.scenes.flatMap(x=>[x.target,...x.tiles.map(t=>t.src)])];
+if (sources.includes('/media/memories/extra-02.webp')) throw Error('The excluded professor photo is still rendered');
 if(new Set(sources).size!==sources.length) throw Error('A rendered source URL appears in more than one section');
 const hashes = new Map();
 for(const src of sources){

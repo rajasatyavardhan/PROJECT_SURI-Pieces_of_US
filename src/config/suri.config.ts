@@ -90,6 +90,15 @@ export const suriConfig = {
    * names, media paths, or visitor tracking are sent to the website.
    * Refresh these numbers only after processing a newer export privately.
    */
+  mbbs: {
+    title: "Your white-coat chapter",
+    note: "Future doctor gaaru, one small diagnosis: Baava misses you.",
+    imageSrc: "/media/memories/extra-03.webp",
+    imageAlt: "Susritha in a white coat beside her professor, selected by Raja",
+    caption: "Learning, growing, and becoming the doctor you dream of being.",
+    videos: [] as { src: string; poster: string; title: string }[],
+  },
+
   telegramMoments: {
     title: "Our little Telegram universe",
     note: "A few numbers from the moments we kept sending each other.",
@@ -245,7 +254,7 @@ export const suriConfig = {
     { id: "memory-08", imageSrc: "/media/memories/memory-08.webp", alt: "Raja smiling beside the falls", title: "From my side of the story", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Raja"], ready: true },
     { id: "memory-09", imageSrc: "/media/memories/memory-09.webp", alt: "Raja looking out toward a waterfall", title: "Looking up at our sky", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Raja"], ready: true },
     { id: "memory-10", imageSrc: "/media/memories/memory-10.webp", alt: "Susritha with family at a celebration", title: "The people around you", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Family"], ready: true },
-  ].filter(memory => !["memory-04", "memory-05", "memory-06", "memory-08"].includes(memory.id)) as SuriMemory[],
+  ].filter(memory => !["extra-02", "extra-03", "memory-04", "memory-05", "memory-06", "memory-08"].includes(memory.id)) as SuriMemory[],
 
   /** Approved images excluded from the main story but allowed in the photo sky.
    * Populate this with web-ready assets only; never commit review IDs, chat text,
@@ -274,12 +283,12 @@ export const suriConfig = {
     eyebrow: "Project SURI",
     title: "And the best part is still us.",
     promise:
-      "Happy birthday, Suri. Every piece of this was made with love, and every tomorrow is another piece we get to make together.",
+      "Happy birthday, Sai Susritha—our future doctor, and Susritha Vardhan (hehe). Every piece of this was made with love, and every tomorrow is another piece we get to make together.",
     mosaicTiles: 24,
     /** How many tiles are already "filled" (this site). */
     mosaicFilled: 5,
     mosaicCaption: "unrevealed",
-    footer: "Made for you, with all my love. — Raja",
+    footer: "Made for you, with all my love. — T. Raja Satya Vardhan Reddy",
   },
 
   contact: {

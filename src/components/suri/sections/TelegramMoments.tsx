@@ -14,7 +14,7 @@ export function TelegramMoments() {
   return <section className="birthday-section telegram-moments px-5 py-24 sm:px-10 lg:px-16" aria-labelledby="telegram-moments-title">
     <div className="mx-auto max-w-7xl">
       <Reveal>
-        <p className="birthday-eyebrow">07 / The little things we sent</p>
+        <p className="birthday-eyebrow">The little things we sent</p>
         <h2 id="telegram-moments-title" className="birthday-title mt-5">{story.title}</h2>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">{story.note}</p>
       </Reveal>

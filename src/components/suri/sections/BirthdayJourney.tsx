@@ -74,7 +74,7 @@ export function WorldIntro() {
     <section id="suri-world" className="birthday-section birthday-world px-5 py-24 sm:px-10 lg:px-16">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
         <Reveal>
-          <p className="birthday-eyebrow">01 / A little world</p>
+          <p className="birthday-eyebrow">A little world</p>
           <h2 className="birthday-title mt-5">{birthday.worldTitle}</h2>
           <p className="mt-7 max-w-xl text-balance text-lg leading-relaxed text-muted-foreground">{birthday.worldNote}</p>
           <TogetherCounter />
@@ -96,7 +96,7 @@ export function SuriStory() {
     <section className="birthday-section px-5 py-24 sm:px-10 lg:px-16" aria-labelledby="suri-story-title">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <p className="birthday-eyebrow">02 / Before and after we met</p>
+          <p className="birthday-eyebrow">Before and after we met</p>
           <h2 id="suri-story-title" className="birthday-title mt-5">Every version of <em className="text-primary">you.</em></h2>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">A little journey from childhood to now, with your favourite moments finding their places along the way.</p>
         </Reveal>
@@ -110,7 +110,6 @@ export function SuriStory() {
                 </>}
               </div>
               <div className="p-6">
-                <span className="birthday-eyebrow">Chapter {chapter.number}</span>
                 <h3 className="mt-3 font-serif text-3xl leading-tight">{chapter.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{chapter.body}</p>
               </div>
@@ -120,6 +119,32 @@ export function SuriStory() {
       </div>
     </section>
   );
+}
+
+export function MbbsChapter() {
+  const chapter = suriConfig.mbbs;
+  return <section className="birthday-section px-5 py-24 sm:px-10 lg:px-16" aria-labelledby="mbbs-title">
+    <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-2">
+      <Reveal>
+        <p className="birthday-eyebrow">Future doctor gaaru</p>
+        <h2 id="mbbs-title" className="birthday-title mt-5">{chapter.title}</h2>
+        <p className="mt-6 max-w-xl font-serif text-2xl leading-relaxed text-primary">{chapter.note}</p>
+        <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">{chapter.caption}</p>
+      </Reveal>
+      <Reveal delay={100} className="birthday-story-card">
+        <img src={chapter.imageSrc} alt={chapter.imageAlt} loading="lazy" className="max-h-[70svh] w-full object-contain" />
+      </Reveal>
+    </div>
+    {chapter.videos.length > 0 && <div className="mx-auto mt-10 grid max-w-7xl gap-6 md:grid-cols-2">
+      {chapter.videos.map(video => <figure key={video.src}>
+        <video controls playsInline preload="none" poster={video.poster} className="max-h-[70svh] w-full rounded-2xl">
+          <source src={video.src} />
+          Your browser cannot play this video.
+        </video>
+        <figcaption className="mt-3 text-sm text-muted-foreground">{video.title}</figcaption>
+      </figure>)}
+    </div>}
+  </section>;
 }
 
 
@@ -149,7 +174,7 @@ export function BirthdayCake() {
   return (
     <section className="birthday-section px-5 py-24 text-center sm:px-10" aria-labelledby="cake-title">
       <Reveal className="mx-auto max-w-3xl">
-        <p className="birthday-eyebrow">06 / A playful little pause</p>
+        <p className="birthday-eyebrow">A playful little pause</p>
         <h2 id="cake-title" className="birthday-title mt-5">{suriConfig.birthday.cakeTitle}</h2>
         <p className="mt-5 text-base text-muted-foreground">Make a wish, tap the candle, then drag your finger down through the chocolate cake to cut a slice.</p>
         <div

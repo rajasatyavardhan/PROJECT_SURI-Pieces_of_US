@@ -108,7 +108,7 @@ export function MemoryGallery() {
         <Reveal>
           <div className="flex items-end justify-between gap-4">
             <div>
-              <p className="birthday-eyebrow">03 / Our moments</p>
+              <p className="birthday-eyebrow">Our moments</p>
               <h2 id="memories-heading" className="birthday-title mt-5 text-foreground">{suriConfig.birthday.piecesTitle}</h2>
               <p className="mt-4 max-w-xl text-base text-muted-foreground">{suriConfig.birthday.piecesBody}</p>
             </div>
