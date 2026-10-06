@@ -12,6 +12,7 @@ import { MemoryGallery } from "@/components/suri/sections/MemoryGallery";
 import { BirthdayCake, MbbsChapter, SuriStory, WorldIntro } from "@/components/suri/sections/BirthdayJourney";
 import { Butterflies, StoryMosaic } from "@/components/suri/sections/PhotoFinale";
 import { TelegramMoments } from "@/components/suri/sections/TelegramMoments";
+import { PrivateNotes } from "@/components/suri/sections/PrivateNotes";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -80,6 +81,7 @@ function Index() {
 
             <BirthdayCake />
             <TelegramMoments />
+            <PrivateNotes />
 
             {/* The discreet star — easy to miss, lovely to find. */}
             <Reveal className="mx-auto max-w-7xl px-5 pb-6 sm:px-10 lg:px-16">

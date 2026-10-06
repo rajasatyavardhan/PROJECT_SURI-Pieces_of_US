@@ -3,11 +3,12 @@
  *
  * - Uses the generated browser client (publishable key only; no service-role
  *   key anywhere in client code).
- * - The 6-digit code is emailed by the backend; nothing is sent from here
+ * - The backend email template determines whether it sends a link or code;
+ *   nothing is sent from here
  *   until `sendEmailOtp` is actually called by the future notes UI.
  * - Permitted emails are enforced server-side by RLS / suri_note_member_name();
  *   no email addresses appear in this codebase.
- * - Works on the live origin and preview: the code flow needs no redirect URL.
+ * - Links return to the live site; codes can also be verified in the preview.
  */
 import { supabase } from "@/integrations/supabase/client";
 
@@ -15,7 +16,7 @@ import { supabase } from "@/integrations/supabase/client";
 export async function sendEmailOtp(email: string) {
   const { error } = await supabase.auth.signInWithOtp({
     email,
-    options: { shouldCreateUser: true },
+    options: { shouldCreateUser: true, emailRedirectTo: "https://project-suri-pieces.lovable.app/" },
   });
   if (error) throw error;
 }
