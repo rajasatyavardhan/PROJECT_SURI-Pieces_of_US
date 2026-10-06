@@ -1,13 +1,19 @@
-import { type PointerEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { suriConfig } from "@/config/suri.config";
 import { Reveal } from "../Reveal";
-import { SoftButton } from "../SoftButton";
 
 const torontoFormatter = new Intl.DateTimeFormat("en-CA", {
   timeZone: "America/Toronto",
   year: "numeric", month: "2-digit", day: "2-digit",
   hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23",
 });
+const localClocks = [
+  { label: "Raja · Toronto", zone: "America/Toronto" },
+  { label: "Suri · Vietnam", zone: "Asia/Ho_Chi_Minh" },
+].map(clock => ({ ...clock, formatter: new Intl.DateTimeFormat("en-CA", {
+  timeZone: clock.zone, month: "short", day: "numeric", hour: "numeric", minute: "2-digit", second: "2-digit", hour12: true,
+}) }));
+const birthdayInstant = new Date("2026-10-07T00:00:00+07:00");
 
 function torontoClockParts(instant: Date) {
   const parts = torontoFormatter.formatToParts(instant);
@@ -64,7 +70,16 @@ function TogetherCounter() {
         <span>{value === undefined ? "—" : value}</span><small>{label}</small>
       </div>)}
     </div>
-    <time dateTime={start} className="birthday-together-since">Since 21 April 2024 · 6:00 a.m. Toronto time</time>
+    <time dateTime={start} className="birthday-together-since">Since 21 April 2024 · 6:00 a.m. Toronto / 5:00 p.m. Vietnam</time>
+    <div className="suri-local-clocks">
+      {localClocks.map(clock => <div key={clock.zone}><span>{clock.label}</span><time dateTime={now?.toISOString()}>{now ? clock.formatter.format(now) : "—"}</time></div>)}
+    </div>
+    <p className="mt-4 text-xs leading-relaxed text-primary" aria-live="off">
+      {now ? now >= birthdayInstant ? "It's your birthday in Vietnam. Happy 20th, Bujjodaa! ♡" : (() => {
+        const seconds = Math.max(0, Math.ceil((birthdayInstant.getTime() - now.getTime()) / 1000));
+        return `Your birthday begins in ${Math.floor(seconds / 86400)}d ${Math.floor(seconds / 3600) % 24}h ${Math.floor(seconds / 60) % 60}m ${seconds % 60}s · midnight Vietnam / 1 p.m. Toronto, 6 October`;
+      })() : "Two time zones. One little us."}
+    </p>
   </div>;
 }
 
@@ -148,71 +163,4 @@ export function MbbsChapter() {
 }
 
 
-export function BirthdayCake() {
-  const [stage, setStage] = useState<"lit" | "wished" | "cut">("lit");
-  const [cutProgress, setCutProgress] = useState(0);
-  const [isCutting, setIsCutting] = useState(false);
-  const cutStartY = useRef<number | null>(null);
-
-  const advanceCut = (event: PointerEvent<HTMLDivElement>) => {
-    if (stage !== "wished" || cutStartY.current === null) return;
-    const distance = event.clientY - cutStartY.current;
-    setCutProgress(Math.max(0, Math.min(1, distance / 105)));
-  };
-
-  const finishCut = (event: PointerEvent<HTMLDivElement>) => {
-    if (stage === "wished" && cutStartY.current !== null && event.clientY - cutStartY.current >= 85) {
-      setStage("cut");
-      setCutProgress(1);
-    } else {
-      setCutProgress(0);
-    }
-    cutStartY.current = null;
-    setIsCutting(false);
-  };
-
-  return (
-    <section className="birthday-section px-5 py-24 text-center sm:px-10" aria-labelledby="cake-title">
-      <Reveal className="mx-auto max-w-3xl">
-        <p className="birthday-eyebrow">A playful little pause</p>
-        <h2 id="cake-title" className="birthday-title mt-5">{suriConfig.birthday.cakeTitle}</h2>
-        <p className="mt-5 text-base text-muted-foreground">Make a wish, tap the candle, then drag your finger down through the chocolate cake to cut a slice.</p>
-        <div
-          className={`birthday-cake-scene ${stage === "wished" ? "birthday-cake-ready" : ""}`}
-          role={stage === "wished" ? "button" : "img"}
-          tabIndex={stage === "wished" ? 0 : undefined}
-          aria-label={stage === "lit" ? "A chocolate birthday cake with a lit candle" : stage === "cut" ? "A sliced chocolate birthday cake" : "Drag down to cut the chocolate cake, or press Enter"}
-          onPointerDown={event => {
-            if (stage !== "wished") return;
-            const bounds = event.currentTarget.getBoundingClientRect();
-            const relativeY = event.clientY - bounds.top;
-            if (relativeY < 90 || relativeY > 180) return;
-            event.currentTarget.setPointerCapture(event.pointerId);
-            cutStartY.current = event.clientY;
-            setCutProgress(0);
-            setIsCutting(true);
-          }}
-          onPointerMove={advanceCut}
-          onPointerUp={finishCut}
-          onPointerCancel={() => { cutStartY.current = null; setCutProgress(0); setIsCutting(false); }}
-          onKeyDown={event => { if (stage === "wished" && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); setStage("cut"); setCutProgress(1); } }}
-        >
-          <span className={`birthday-flame ${stage === "lit" ? "" : "birthday-flame-out"}`} onClick={() => { if (stage === "lit") setStage("wished"); }} />
-          <span className="birthday-candle" />
-          <span className={`birthday-cake-top ${stage === "cut" ? "birthday-cake-cut" : ""}`} />
-          <span className="birthday-cake-base" />
-          <span className={`birthday-cake-slice ${stage === "cut" ? "birthday-cake-slice-served" : ""}`} />
-          {stage === "wished" && <span className="birthday-cake-guide" aria-hidden="true">↓ drag here to cut</span>}
-          {isCutting && <span className="birthday-cut-line" style={{ height: `${cutProgress * 125}px` }} aria-hidden="true" />}
-          {isCutting && <span className="birthday-knife" style={{ top: `${95 + cutProgress * 125}px` }} aria-hidden="true">✦</span>}
-          <span className="birthday-cake-plate" />
-        </div>
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          {stage === "lit" && <SoftButton type="button" onClick={() => setStage("wished")}>Blow out the candle ✨</SoftButton>}
-          {stage === "cut" && <SoftButton type="button" onClick={() => { setStage("lit"); setCutProgress(0); }}>Make another wish</SoftButton>}
-        </div>
-        <p role="status" className="mt-6 min-h-6 font-serif text-2xl text-primary">{stage === "wished" ? (isCutting ? "Keep pulling your finger down…" : "Wish made. Drag down through the cake to cut it.") : stage === "cut" ? "The first slice is yours, birthday girl." : ""}</p>
-      </Reveal>
-    </section>
-  );
-}
+export { ChocolateCake as BirthdayCake } from "./ChocolateCake";

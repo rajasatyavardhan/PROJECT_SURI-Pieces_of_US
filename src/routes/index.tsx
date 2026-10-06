@@ -10,7 +10,7 @@ import { Particles } from "@/components/suri/Particles";
 import { Reveal } from "@/components/suri/Reveal";
 import { MemoryGallery } from "@/components/suri/sections/MemoryGallery";
 import { BirthdayCake, MbbsChapter, SuriStory, WorldIntro } from "@/components/suri/sections/BirthdayJourney";
-import { Butterflies, PhotoFinale } from "@/components/suri/sections/PhotoFinale";
+import { Butterflies, StoryMosaic } from "@/components/suri/sections/PhotoFinale";
 import { TelegramMoments } from "@/components/suri/sections/TelegramMoments";
 
 export const Route = createFileRoute("/")({
@@ -66,8 +66,15 @@ function Index() {
                 </Reveal>
                 <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:gap-10">
                   <JustMe />
-                  <LoveMessages />
+                  <StoryMosaic index={0} />
                 </div>
+              </div>
+            </section>
+
+            <section className="birthday-section px-5 py-24 sm:px-10 lg:px-16" aria-label="Things I would say, and one more photo surprise">
+              <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
+                <StoryMosaic index={1} />
+                <LoveMessages />
               </div>
             </section>
 
@@ -79,7 +86,6 @@ function Index() {
               <SecretStar />
             </Reveal>
 
-            <PhotoFinale />
             <Closing />
           </div>
         </div>

@@ -220,9 +220,9 @@ export const suriConfig = {
     },
     photo: {
       /** The approved Raja portrait is stored at public/media/suri-photo.webp. */
-      src: "/media/suri-photo.webp",
-      alt: "Raja smiling beside the falls",
-      caption: "Me, in a moment I wanted you to have.",
+      src: "/media/memories/memory-09.webp",
+      alt: "Raja looking out toward a waterfall",
+      caption: "Me, looking up at a sky full of us.",
       /** Set to true once you've actually added the file. */
       ready: true,
       placeholder: "Photo goes here — add public/media/suri-photo.webp",
@@ -254,7 +254,7 @@ export const suriConfig = {
     { id: "memory-08", imageSrc: "/media/memories/memory-08.webp", alt: "Raja smiling beside the falls", title: "From my side of the story", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Raja"], ready: true },
     { id: "memory-09", imageSrc: "/media/memories/memory-09.webp", alt: "Raja looking out toward a waterfall", title: "Looking up at our sky", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Raja"], ready: true },
     { id: "memory-10", imageSrc: "/media/memories/memory-10.webp", alt: "Susritha with family at a celebration", title: "The people around you", dateLabel: "", locationLabel: "", shortCaption: "", tags: ["Family"], ready: true },
-  ].filter(memory => !["extra-02", "extra-03", "memory-04", "memory-05", "memory-06", "memory-08"].includes(memory.id)) as SuriMemory[],
+  ].filter(memory => !memory.tags.includes("Raja") && !["extra-02", "extra-03", "memory-04", "memory-05", "memory-06", "memory-08", "memory-09"].includes(memory.id)) as SuriMemory[],
 
   /** Approved images excluded from the main story but allowed in the photo sky.
    * Populate this with web-ready assets only; never commit review IDs, chat text,

@@ -7,22 +7,27 @@ import { SoftButton } from "../SoftButton";
 
 type Scene = { target: string; columns: number; rows: number; tiles: { src: string; cell: number; color?: number[] }[] };
 type Stage = "waiting" | "loading" | "flying" | "gathering" | "complete" | "error";
+type Design = "photo" | "heart" | "R" | "S";
 const ease = (value: number) => { const t = Math.min(1, Math.max(0, value)); return t * t * (3 - 2 * t); };
 
-function MosaicScene({ scene, index }: { scene: Scene; index: number }) {
+export function MosaicScene({ scene, index }: { scene: Scene; index: number }) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const frame = useRef(0);
   const running = useRef(false);
   const mounted = useRef(true);
   const skip = useRef(false);
+  const loaded = useRef<HTMLImageElement[] | null>(null);
+  const [design, setDesign] = useState<Design>("photo");
   const [stage, setStage] = useState<Stage>("waiting");
   useEffect(() => {
     mounted.current = true;
     return () => { mounted.current = false; running.current = false; cancelAnimationFrame(frame.current); };
   }, []);
 
-  async function launch() {
-    if (running.current || stage === "complete") return;
+  async function launch(nextDesign: Design = design) {
+    const design = nextDesign;
+    if (running.current) return;
+    cancelAnimationFrame(frame.current);
     running.current = true;
     skip.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     canvas.current?.scrollIntoView({ behavior: skip.current ? "auto" : "smooth", block: "center" });
@@ -34,12 +39,49 @@ function MosaicScene({ scene, index }: { scene: Scene; index: number }) {
       image.src = src;
     });
     try {
-      const [target, ...images] = await Promise.all([load(scene.target), ...scene.tiles.map(tile => load(tile.src))]);
+      const assets = loaded.current ?? await Promise.all([load(scene.target), ...scene.tiles.map(tile => load(tile.src))]);
+      loaded.current = assets;
+      const [target, ...images] = assets;
       if (!target) throw new Error("Mosaic target unavailable");
       if (!mounted.current) return;
       const context = canvas.current?.getContext("2d", { alpha: false });
       if (!context) throw new Error("Canvas unavailable");
       const width = 720, height = 960;
+      const mask = document.createElement("canvas");
+      mask.width = width; mask.height = height;
+      const maskContext = mask.getContext("2d");
+      if (!maskContext) throw new Error("Shape canvas unavailable");
+      maskContext.fillStyle = "white";
+      if (design === "photo") maskContext.fillRect(0, 0, width, height);
+      else if (design === "heart") {
+        maskContext.beginPath();
+        maskContext.moveTo(360, 235);
+        maskContext.bezierCurveTo(90, 5, -45, 390, 360, 800);
+        maskContext.bezierCurveTo(765, 390, 630, 5, 360, 235);
+        maskContext.fill();
+      } else {
+        maskContext.font = "bold 850px Georgia";
+        maskContext.textAlign = "center"; maskContext.textBaseline = "middle";
+        maskContext.fillText(design, width / 2, height / 2 + 30);
+      }
+      const pixels = maskContext.getImageData(0, 0, width, height).data;
+      const candidates: { x: number; y: number }[] = [];
+      for (let y = 8; y < height; y += 16) for (let x = 8; x < width; x += 16) {
+        if ((pixels[(y * width + x) * 4 + 3] ?? 0) > 128) candidates.push({ x, y });
+      }
+      if (candidates.length < scene.tiles.length) throw new Error("Not enough unique shape positions");
+      const placements = scene.tiles.map((tile, i) => design === "photo"
+        ? { x: (tile.cell % scene.columns + .5) * width / scene.columns, y: (Math.floor(tile.cell / scene.columns) + .5) * height / scene.rows }
+        : candidates[Math.floor(i * candidates.length / scene.tiles.length)]!);
+      // Tint only the selected silhouette; the original picture is never stretched.
+      const portrait = document.createElement("canvas"); portrait.width = width; portrait.height = height;
+      const portraitContext = portrait.getContext("2d");
+      if (!portraitContext) throw new Error("Portrait canvas unavailable");
+      const targetRatio = Math.min(width / target.width, height / target.height);
+      const tw = target.width * targetRatio, th = target.height * targetRatio;
+      portraitContext.drawImage(target, (width - tw) / 2, (height - th) / 2, tw, th);
+      portraitContext.globalCompositeOperation = "destination-in";
+      portraitContext.drawImage(mask, 0, 0);
       const started = performance.now();
       let lastPaint = -Infinity;
       let lastStage: Stage = "loading";
@@ -67,16 +109,15 @@ function MosaicScene({ scene, index }: { scene: Scene; index: number }) {
           const formingHeart = ease((progress - .32) / .2);
           const rocketX = width * (.25 + (i % 4) / 6);
           const rocketY = height * (.24 + (i % 4) * .055);
-          const finalX = (tile.cell % scene.columns + .5) * tileWidth;
-          const finalY = (Math.floor(tile.cell / scene.columns) + .5) * tileHeight;
+          const { x: finalX, y: finalY } = placements[i]!;
           const spreadX = rocketX + Math.cos(angle) * 95 * explosion;
           const spreadY = height * .95 + (rocketY - height * .95) * flight + Math.sin(angle) * 95 * explosion;
           const burstX = spreadX + (heartX - spreadX) * formingHeart;
           const burstY = spreadY + (heartY - spreadY) * formingHeart;
           const x = burstX + (finalX - burstX) * gathering;
           const y = burstY + (finalY - burstY) * gathering;
-          const w = 25 + (tileWidth - 25) * gathering;
-          const h = 34 + (tileHeight - 34) * gathering;
+          const w = 25 + ((design === "photo" ? tileWidth : 34) - 25) * gathering;
+          const h = 34 + ((design === "photo" ? tileHeight : 43) - 34) * gathering;
           context.globalAlpha = ease((progress - delay) / .08);
           context.save();
           context.translate(x, y);
@@ -96,7 +137,7 @@ function MosaicScene({ scene, index }: { scene: Scene; index: number }) {
         // A gentle target blend makes the photo legible without replacing its
         // unique memory tiles. No tile is cloned to fill an empty cell.
         context.globalAlpha = gathering * .66;
-        context.drawImage(target, 0, 0, width, height);
+        context.drawImage(portrait, 0, 0);
         context.globalAlpha = 1;
         if (progress < 1) frame.current = requestAnimationFrame(draw);
         else running.current = false;
@@ -116,9 +157,17 @@ function MosaicScene({ scene, index }: { scene: Scene; index: number }) {
       {(stage === "waiting" || stage === "loading" || stage === "error") && <div className="mosaic-invitation"><Sparkles aria-hidden="true" size={36} /><p className="font-serif text-4xl">{index === 0 ? "A little sky. A very big us." : "One more little surprise."}</p><span>{scene.tiles.length} different memories · no repeated tiles</span></div>}
     </div>
     <p role="status" className="mosaic-status">{label}</p>
-    {stage !== "complete" && <SoftButton type="button" onClick={() => void launch()} disabled={busy} className="min-h-12 px-7 py-3">{stage === "loading" ? "Gathering memories…" : busy ? "Watch the sky…" : index === 0 ? "Light up our sky ✨" : "One more surprise ✨"}</SoftButton>}
+    <div className="mosaic-designs" role="group" aria-label={`Mosaic ${index + 1} design`}>
+      {(["photo", "heart", "R", "S"] as Design[]).map(option => <button key={option} type="button" aria-pressed={design === option} disabled={busy} onClick={() => { setDesign(option); if (stage === "complete") void launch(option); }}>{option === "photo" ? "Full photo" : option === "heart" ? "Heart ♡" : option}</button>)}
+    </div>
+    <SoftButton type="button" onClick={() => void launch()} disabled={busy} className="min-h-12 px-7 py-3">{stage === "loading" ? "Gathering memories…" : busy ? "Watch the sky…" : stage === "complete" ? "Replay our photo fireworks ✨" : index === 0 ? "Light up our sky ✨" : "One more surprise ✨"}</SoftButton>
     {(stage === "flying" || stage === "gathering") && <button type="button" className="mosaic-skip" onClick={() => { skip.current = true; }}>Bring the pieces together now</button>}
   </div>;
+}
+
+export function StoryMosaic({ index }: { index: number }) {
+  const scene = mosaics.scenes[index] as Scene | undefined;
+  return scene ? <MosaicScene scene={scene} index={index} /> : null;
 }
 
 export function PhotoFinale() {
@@ -129,5 +178,5 @@ export function PhotoFinale() {
 }
 
 export function Butterflies() {
-  return <div className="suri-butterflies" aria-hidden="true">{Array.from({ length: 6 }, (_, index) => <span key={index} className="suri-butterfly" style={{ "--butterfly-index": index } as CSSProperties}><svg width="32" height="26" viewBox="0 0 32 26" fill="none"><path className="butterfly-left" d="M16 13C5-8-8 2 6 17c-9 9 10 8 10-4Z" fill="currentColor" /><path className="butterfly-right" d="M16 13C27-8 40 2 26 17c9 9-10 8-10-4Z" fill="currentColor" /><path d="M16 7v15" stroke="currentColor" strokeWidth="1.5" /></svg></span>)}</div>;
+  return <div className="suri-butterflies" aria-hidden="true">{Array.from({ length: 12 }, (_, index) => <span key={index} className="suri-butterfly" style={{ "--butterfly-index": index } as CSSProperties}><svg width="32" height="26" viewBox="0 0 32 26" fill="none"><path className="butterfly-left" d="M16 13C5-8-8 2 6 17c-9 9 10 8 10-4Z" fill="currentColor" /><path className="butterfly-right" d="M16 13C27-8 40 2 26 17c9 9-10 8-10-4Z" fill="currentColor" /><path d="M16 7v15" stroke="currentColor" strokeWidth="1.5" /></svg></span>)}</div>;
 }
