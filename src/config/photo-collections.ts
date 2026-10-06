@@ -1,4 +1,4 @@
-export type CollectionPhoto = { src: string; alt: string };
+export type CollectionPhoto = { src: string; alt: string; rotation?: number };
 const photo = (name: string, alt: string): CollectionPhoto => ({ src: `/media/memories/${name}.webp`, alt });
 export const storyCollections = [
   [{ src: '/media/childhood.webp', alt: 'Suri in her younger-years portrait' }, photo('reviewed-12', 'Suri in her school uniform'), photo('reviewed-26', 'Another school-day memory of Suri')],
@@ -11,7 +11,7 @@ export const galleryCollections = [
   { title: 'That smile, every time', photos: [photo('memory-01', 'Suri in lilac beside a palm tree'), photo('memory-02', 'Suri reflected in a rain-speckled mirror'), photo('memory-03', 'Suri smiling in a floral outfit')] },
   { title: 'The people who love you', photos: [photo('reviewed-11', 'A family moment reviewed by Raja'), photo('reviewed-13', 'Suri with family')] },
   { title: 'Always their little girl', caption: 'You’ll always be their little girl. (Mine too, hehe.)', photos: [photo('reviewed-75', 'Suri with her mother and father'), photo('reviewed-60', 'Suri with her father and Raja’s father'), photo('reviewed-61', 'Suri with Raja’s father'), photo('memory-10', 'Suri with family at a celebration')] },
-  { title: 'Future doctor, lifelong memories', photos: [photo('reviewed-18', 'Suri with her MBBS friends'), photo('reviewed-22', 'A college celebration with friends'), photo('reviewed-24', 'Suri and a college friend'), photo('reviewed-25', 'A mirror selfie with her MBBS friends')] },
+  { title: 'Future doctor, lifelong memories', photos: [{...photo('reviewed-18', 'Suri with her MBBS friends'), rotation:-90}, photo('reviewed-22', 'A college celebration with friends'), photo('reviewed-24', 'Suri and a college friend'), photo('reviewed-25', 'A mirror selfie with her MBBS friends')] },
 ];
 // Reserved here, not reused as mosaic tiles.
 export const backgroundPhotos = ['/media/mosaic/piece-0001.webp', '/media/mosaic/piece-0002.webp'];
